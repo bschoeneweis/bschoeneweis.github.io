@@ -5,8 +5,8 @@ module.exports = {
     siteUrl: `https://bschoeneweis.github.io`,
     description: `Bradley Schoeneweis | Development`,
     hero: {
-      heading: `Bradley Schoeneweis | Development`,
-      maxWidth: 652,
+      heading: ``,
+      maxWidth: 700,
     },
     social: [
       {
@@ -47,7 +47,7 @@ module.exports = {
     {
       resolve: `gatsby-plugin-google-analytics`,
       options: {
-        trackingId: 'G-NXCH4KEE50',
+        trackingId: 'UA-193041393-1',
         head: true,
         anonymize: true,
         respectDNT: true,
