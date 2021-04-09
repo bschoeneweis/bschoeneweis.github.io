@@ -19,6 +19,7 @@ _To understand and visualize the companies within my directly connected network 
 5. **Improving the output** - cleaning up the network graph with additional filtering
 
 ### Results
+_Hover over the nodes for more details_
 - <a target="_blank" href="/network/first-nx-graph.html">The first network graph</a>
 - <a target="_blank" href="/network/second-nx-graph.html">The second (more specific) network graph</a>
 
