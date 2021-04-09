@@ -12,11 +12,11 @@ excerpt: Using Python's Pandas, NetworkX, and pyvis libraries to visualize compa
 _To understand and visualize the companies within my directly connected network on LinkedIn_
 
 ### Process overview
-1. <a href="#linkedin-data-sources">LinkedIn data sources</a> - retrieving LinkedIn Network data from a "Get a copy of your data" CSV export
-2. <a href="#diving-into-data">Diving into the data</a> - exploring, cleaning, and aggregating the data with <a target="_blank" href="https://pandas.pydata.org/">Pandas</a>
-3. <a href="#creating-the-network">Creating the network</a> - creating a network graph using <a target="_blank" href="https://networkx.org/">NetworkX</a>
-4. <a href="#visualization">Visualization</a> - visualizing the network with <a target="_blank" href="https://pyvis.readthedocs.io/en/latest/">pyvis</a>
-5. <a href="#improving-the-output">Improving the output</a> - cleaning up the network graph with additional filtering
+1. **LinkedIn data sources** - retrieving LinkedIn Network data from a "Get a copy of your data" CSV export
+2. **Diving into the data** - exploring, cleaning, and aggregating the data with <a target="_blank" href="https://pandas.pydata.org/">Pandas</a>
+3. **Creating the network** - creating a network graph using <a target="_blank" href="https://networkx.org/">NetworkX</a>
+4. **Visualization** - visualizing the network with <a target="_blank" href="https://pyvis.readthedocs.io/en/latest/">pyvis</a>
+5. **Improving the output** - cleaning up the network graph with additional filtering
 
 ### Python dependencies
 ```python
@@ -214,7 +214,7 @@ nt.show('nx.html')
 
 And it's that simple! We specify a width and height, optional styling attributes, and then we can generate the network graph visual straight from what we created with NetworkX.
 
-Now we can see <a target="_blank" href="/first-nx-graph.html">the network we generated</a>.
+Now we can see <a target="_blank" href="/network/first-nx-graph.html">the network we generated</a>.
 
 You can hover over each node to see the total number of connections that work at the respective company, and below is a list of the positions held by your connections.
 
@@ -267,7 +267,7 @@ nt.repulsion()
 nt.show('nx.html')
 ```
 
-Now, let's look at the <a target="_blank" href="/second-nx-graph.html">updated results</a>.
+Now, let's look at the <a target="_blank" href="/network/second-nx-graph.html">updated results</a>.
 
 Much better! This is more readable and easier to interact with.
 
