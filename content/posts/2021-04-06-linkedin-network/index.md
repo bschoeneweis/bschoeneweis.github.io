@@ -18,6 +18,10 @@ _To understand and visualize the companies within my directly connected network 
 4. **Visualization** - visualizing the network with <a target="_blank" href="https://pyvis.readthedocs.io/en/latest/">pyvis</a>
 5. **Improving the output** - cleaning up the network graph with additional filtering
 
+### Results
+- <a target="_blank" href="/network/first-nx-graph.html">The first network graph</a>
+- <a target="_blank" href="/network/second-nx-graph.html">The second (more specific) network graph</a>
+
 ### Python dependencies
 ```python
 # Python standard library
