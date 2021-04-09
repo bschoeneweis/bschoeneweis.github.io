@@ -1,7 +1,7 @@
 ---
 title: Visualizing your LinkedIn Connections with Python | Pandas, NetworkX, pyvis
 author: Bradley Schoeneweis
-date: 2021-04-07
+date: 2021-04-08
 hero: ./images/hero.jpg
 excerpt: Using Python's Pandas, NetworkX, and pyvis libraries to visualize companies you have connections with on LinkedIn.
 ---
@@ -212,9 +212,9 @@ nt.repulsion()  # Spaces out the nodes
 nt.show('nx.html')
 ```
 
-and it's that simple! We specify a width and height, optional styling attributes, and then we can generate the network graph visual straight from what we created with NetworkX.
+And it's that simple! We specify a width and height, optional styling attributes, and then we can generate the network graph visual straight from what we created with NetworkX.
 
-[Here is what was actually generated](/first-nx-graph.html).
+Now we can see <a target="_blank" href="/first-nx-graph.html">the network we generated</a>.
 
 You can hover over each node to see the total number of connections that work at the respective company, and below is a list of the positions held by your connections.
 
@@ -267,7 +267,7 @@ nt.repulsion()
 nt.show('nx.html')
 ```
 
-Now, let's look at the [updated results](/second-nx-graph.html).
+Now, let's look at the <a target="_blank" href="/second-nx-graph.html">updated results</a>.
 
 Much better! This is more readable and easier to interact with.
 
