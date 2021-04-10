@@ -17,6 +17,10 @@ module.exports = {
         name: `linkedin`,
         url: `https://www.linkedin.com/in/bradley-schoeneweis/`,
       },
+      {
+        name: `medium`,
+        url: `https://bradley-schoeneweis.medium.com/`,
+      }
     ],
   },
   plugins: [
