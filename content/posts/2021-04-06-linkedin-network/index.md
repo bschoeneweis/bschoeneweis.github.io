@@ -6,7 +6,7 @@ hero: ./images/hero.jpg
 excerpt: Using Python's Pandas, NetworkX, and pyvis libraries to visualize companies you have connections with on LinkedIn.
 ---
 
-## tldr;
+## tl;dr
 
 ### Goal
 _To understand and visualize the companies within my directly connected network on LinkedIn_
