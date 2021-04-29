@@ -48,7 +48,7 @@ This article will use `us-east-2` for the AWS region, changing this shouldn't ef
 A better way to do this is through [AWS Serverless Application Model (SAM)](https://docs.aws.amazon.com/serverless-application-model/latest/developerguide/what-is-sam.html), but this is more tailored for those looking for the basic setup through the AWS Management Console.
 
 ---
-A common task I've found myself undertaking recently is programatically converting an HTML file/string to an embedded and stylized PDF file.
+A common task I've found myself undertaking recently is programmatically converting an HTML file/string to an embedded and stylized PDF file.
 
 An example use case for this might be exporting a self-managed customer invoice or generating a daily report from an existing HTML template. For those who have used template languages before, you can probably imagine the usefulness of a function like this in combination with [Jinja](https://jinja.palletsprojects.com/en/2.11.x/) or template rendering engines commonly found in Web Frameworks (like [Django](https://www.djangoproject.com/)).
 
