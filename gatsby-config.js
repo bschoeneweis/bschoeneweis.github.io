@@ -10,12 +10,16 @@ module.exports = {
     },
     social: [
       {
-        name: `github`,
-        url: `https://github.com/bschoeneweis`,
+        name: `twitter`,
+        url: `https://twitter.com/bschoeneweis`,
       },
       {
         name: `linkedin`,
         url: `https://www.linkedin.com/in/bradley-schoeneweis/`,
+      },
+      {
+        name: `github`,
+        url: `https://github.com/bschoeneweis`,
       },
       {
         name: `medium`,

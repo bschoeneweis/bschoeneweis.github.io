@@ -1,7 +1,7 @@
 ---
 title: Converting HTML to a PDF using Python, wkhtmltopdf, and AWS Lambda
 author: Bradley Schoeneweis
-date: 2021-04-12
+date: 2021-04-28
 hero: ./images/hero.jpg
 excerpt: Setting up usage of wkhtmltopdf with Python in an AWS Lambda function for easy HTML to PDF conversion.
 ---
@@ -13,18 +13,17 @@ _Setting up an easy to call HTML to PDF converter as an AWS Lambda function_
 
 ### Process Overview
 1. **Downloading the `wkhtmltopdf` binary**
-2. **Creating the AWS Lambda layer**
+2. **Creating the AWS Lambda layer(s) and configuring our function**
 3. **Writing the AWS Lambda function**
 	- We will use Python's [`subprocess` module](https://docs.python.org/3/library/subprocess.html) to call the `wkhtmltopdf` command
 	- For more in-depth usage, also check out [pdfkit](https://pypi.org/project/pdfkit/)
-4. **Calling our function**
 
 ### Prerequisites
-This article assumes access to an AWS account (free-tier is acceptable) and basic knowledge on AWS Lambda/s3. Knowledge of Python will also be assumed.
+This article assumes access to an AWS account (free-tier is acceptable) and basic knowledge of AWS Lambda/S3 and Python.
 
-### Requirements
+### Functional Requirements
 
-1. Allow passing either an s3 file key or an HTML string
+1. Allow passing either an S3 file key or an HTML string
 2. Return a file key for the generated PDF
 3. Accept a small set of options for the `wkhtmltopdf` command
 	- A full man page can be found [here](https://wkhtmltopdf.org/usage/wkhtmltopdf.txt)
@@ -40,8 +39,8 @@ Functionality for the following options
 
 ### Assumptions
 
-1. The HTML string or file will be valid and will include the necessary tags (`<!DOCTYPE html>`, `<html>`, `<head>`, `<body>`)
-2. The event payload will contain all valid values (s3 bucket name, file key, `wkhtmltopdf` options etc.)
+1. The HTML string or file will be valid and will include the necessary tags (`<!DOCTYPE html>`, `<html>`, `<head>`, `<body>`). **It is very important that you check validity of this HTML prior to calling this function if you ever use something similar in production. It may be best to only accept S3 file keys instead of HTML strings, but this is simply to show our functions possibilities or be used as an internal tool.**
+2. The event payload will contain all valid values (S3 bucket name, file key, `wkhtmltopdf` options etc.)
 
 ### Notes
 This article will use `us-east-2` for the AWS region, changing this shouldn't effect functionality, just the links within the article.
@@ -55,7 +54,7 @@ An example use case for this might be exporting a self-managed customer invoice 
 
 After doing some research on third party libraries that could simplify our goal, I decided to use [`wkhtmltopdf`](https://wkhtmltopdf.org/).
 
-`wkhtmltopdf` is an open-source command line tool that enables you to easy convert an HTML file to a PDF file. This is exactly what we're looking for. We will call the `wkhtmltopdf` command. For more Python driven usage, you can check out [pdfkit](https://pypi.org/project/pdfkit/).
+`wkhtmltopdf` is an open-source command line tool that enables you to easy convert an HTML file to a PDF file. This is exactly what we're looking for. We will call the `wkhtmltopdf` command using the [`subprocess`](https://docs.python.org/3/library/subprocess.html) Python library. For more in-depth Python usage, you can check out [pdfkit](https://pypi.org/project/pdfkit/).
 
 Let's dive into it.
 
@@ -76,9 +75,9 @@ _For our goal, AWS Lambda is a powerful tool for the following reasons_
 **Below is an explanation of why handling the dependencies through layers will avoid issues. For continued instruction, you can skip to the next section.**
 
 ### Issues with downloading the binary
-When I was first using this library, I was also using [`pdfkit`](https://pypi.org/project/pdfkit/) to drive this interaction.  At the top of the [installation instructions, you can see the following warning:
+When I was first using this library, I was also using [`pdfkit`](https://pypi.org/project/pdfkit/) to drive this interaction.  At the top of the installation instructions, you can see the following warning:
 
-<p style="background-color: orange; padding: 7px; text-align: center;">
+<p style="background-color: orange; padding: 7px 20px; text-align: center; border-radius: 6px;">
 <i>"<b>Warning!</b> Version in debian/ubuntu repos have reduced functionality (because it compiled without the wkhtmltopdf QT patches), such as adding outlines, headers, footers, TOC etc. To use this options you should install static binary from wkhtmltopdf site"</i>
 </p>
 
@@ -110,11 +109,11 @@ You can download the binary on the releases page under the [Stable releases](htt
 
 Or, you can click [here](https://github.com/wkhtmltopdf/packaging/releases/download/0.12.6-4/wkhtmltox-0.12.6-4.amazonlinux2_lambda.zip) (I likely won't update this link, so probably best to go directly to the release page).
 
-_Random note:_ If you need more fonts for future usage, I've found that [this is a good resource](https://github.com/brandonlim-hs/fonts-aws-lambda-layer).
+_Random note:_ If you need more fonts for future usage, I've found that [this is a good resource](https://github.com/brandonlim-hs/fonts-aws-lambda-layer). You may need to include one of these fonts as a layer in your lambda function (via ARN) if your function has issues in the beginning.
 
 ## Creating the AWS Lambda layers
 
-[AWS Lambda layers](https://docs.aws.amazon.com/lambda/latest/dg/configuration-layers.html) allow us to add in "layers" of dependencies for our functions. An alternative to this uploading your lambda function as a deployment package, but that is out of the scope of this post.
+[AWS Lambda layers](https://docs.aws.amazon.com/lambda/latest/dg/configuration-layers.html) allow us to add in "layers" of dependencies for our functions. An alternative to this is uploading your lambda function as a deployment package or using AWS SAM (Serverless Application Model), but that is out of the scope of this post.
 
 ### `wkhtmltopdf`
 Now that we have the zip file downloaded, let's add our file as a layer in the [AWS Management Console](https://us-east-2.console.aws.amazon.com/console/home?region=us-east-2).
@@ -128,6 +127,8 @@ Then, add the following Layer configuration.
 </div>
 
 Notice that we don't add a runtime here, this is intentional since our layer is a binary.
+
+Click Create and take note of your new layer's Version ARN as we are about to use it to add to our function.
 
 Now we're set up to start writing our function code!
 
@@ -143,11 +144,43 @@ Select `Author from scratch`, and add the following configuration.
 
 You can ignore the `Advanced settings` for our use case.
 
-Once the function is created, let's discuss a few requirements surrounding this function to give us a more clear direction, as the implementation possibilities are extensive.
+Once the function is created, we have just a few configuration additions to make.
+
+### Adding the layer to our Lambda function
+
+Now that our function is created, the first thing we want to do is add our `wkhtmltopdf` layer.
+
+At the top of the Function Overview panel, click the `Layers` button right below your function name. This will bring you down to the layers section. Now click Add a layer.
+
+Click on `Specify an ARN` and copy your Layer Version ARN from earlier.
+
+<div className="Image__Small">
+  <img src="./images/add-layer.jpg" alt="AWS Lambda add layer" />
+</div>
+
+The reason why we need to specify our layer by ARN is because we didn't define a runtime above.
+
+<p style="background-color: #9bc2cf; padding: 7px 20px; text-align: center; border-radius: 6px;">
+<b>Important!</b> if you function generates a PDF with a bunch of black squares, this is likely because there is no font configuration within Lambda. To solve this, you can go to <a href="https://github.com/brandonlim-hs/fonts-aws-lambda-layer" target="_blank">this link</a> that I mentioned earlier, and copy one of those AWS Linux Fonts ARNs for your region, add the environment variable in the README, and repeat these steps for another font layer.
+</p>
+
+### Add permission to access your S3 bucket
+
+One final function configuration that we need to add is permission for our function to access Amazon S3.  To do this, navigate to the Configuration tab below your Function Overview.
+
+Under Configuration, go to the Permissions section. Here, you will see your generated Execution Role. Click this link to go to the IAM Console.
+
+From here, click Attach policies, and add the `AmazonS3FullAccess` policy like so
+
+<div className="Image__Medium">
+  <img src="./images/iam-policy.jpg" alt="AWS Lambda IAM policy" />
+</div>
+
+Now that our function is configured, we can dive into the actual requirements and code!
 
 ### Requirements
 
-1. Allow passing either an s3 file key or an HTML string
+1. Allow passing either an S3 file key or an HTML string
 2. Return a file key for the generated PDF
 3. Accept a small set of options for the `wkhtmltopdf` command
 	- A full man page can be found [here](https://wkhtmltopdf.org/usage/wkhtmltopdf.txt)
@@ -166,7 +199,7 @@ Let's allow the user to pass the following options
 ### Assumptions
 
 1. The HTML string or file will be valid and will include the necessary tags (`<!DOCTYPE html>`, `<html>`, `<head>`, `<body>`)
-2. The event payload will contain all valid values (s3 bucket name, file key, `wkhtmltopdf` options etc.)
+2. The event payload will contain all valid values (S3 bucket name, file key, `wkhtmltopdf` options etc.)
 
 ### The function code
 By default, you will see the following handler.
@@ -181,8 +214,9 @@ def lambda_handler(event, context):
 This is the code that will be executed when your function is called. We'll come back to this in a bit.
 
 #### The imports
-First, let's go ahead and import all of the Python libraries that we'll need and set up some basic tools like the `s3 client` and our `logger`.
+First, let's go ahead and import all of the Python libraries that we'll need and set up some basic tools like the `S3 client` and our `logger`.
 ```python
+from datetime import datetime
 import json
 import logging
 import os
@@ -202,25 +236,30 @@ s3 = boto3.client('s3')
 ```
 
 Now based upon our requirements, we'll likely need helper functions to
-1. Potentially download an HTML file from s3
-2. Upload a file to s3
+1. Potentially download an HTML file from S3
+2. Upload a file to S3
 
 Let's start with those, and then we'll return to our lambda handler.
 
 #### Downloading/uploading the file
-[`boto3`](https://boto3.amazonaws.com/v1/documentation/api/latest/index.html) makes it really easy to interact with s3.  Using `boto3`, we can add the following helper functions.
+[`boto3`](https://boto3.amazonaws.com/v1/documentation/api/latest/index.html) makes it really easy to interact with S3.  Using `boto3`, we can add the following helper functions.
 
 ```python
-def get_s3_file(bucket: str, file_key: str):
+def download_s3_file(bucket: str, file_key: str) -> str:
     """Downloads a file from s3 to `/tmp/[File Key]`.
     
     Args:
         bucket (str): Name of the bucket where the file lives.
         file_key (str): The file key of the file in the bucket.
+
+    Returns:
+    	The local file name as a string.
     """
     local_filename = f'/tmp/{file_key}'
     s3.download_file(Bucket=bucket, Key=file_key, Filename=local_filename)
     logger.info('Downloaded HTML file to %s' % local_filename)
+
+    return local_filename
     
     
 def upload_file_to_s3(bucket: str, filename: str) -> Optional[str]:
@@ -236,7 +275,7 @@ def upload_file_to_s3(bucket: str, filename: str) -> Optional[str]:
     """
     file_key = None
     try:
-        file_key = filename.replace('/tmp', '')
+        file_key = filename.replace('/tmp/', '')
         s3.upload_file(Filename=filename, Bucket=bucket, Key=file_key)
         logger.info('Successfully uploaded the PDF to %s as %s'
                     % (bucket, file_key))
@@ -263,11 +302,11 @@ One thing we haven't talked about yet is the data that we'll need to pass our fu
 Let's define our JSON event schema as the following.
 ```json
 {
-	"bucket": "<Name of the bucket> [Required]",
-	"file_key": "<File key where the file is store in s3> [Optional if `html_string` is defined]",
-	"html_string": "<HTML string to convert to a PDF> [Optional if `file_key` is defined]",
+	"bucket": "<Name of the bucket where the file is stored currently and will be stored after processing> [Required]",
+	"file_key": "<File key where the file is store in S3> [Required if `html_string` is not defined]",
+	"html_string": "<HTML string to convert to a PDF> [Required if `file_key` is not defined]",
 	"wkhtmltopdf_options": {
-		"orientation": "<`Landscape` or `Portrait`> [Optional: Default is `Portrait`]",
+		"orientation": "<`landscape` or `portrait`> [Optional: Default is `portrait`]",
 		"title": "<Title of the PDF> [Optional]",
 		"margin": "<Margin of the PDF (same format as css [<top> <right> <bottom> <left>] (all must be included)).> [Optional]"
 	}
@@ -275,5 +314,195 @@ Let's define our JSON event schema as the following.
 ```
 `wkhtmltopdf_options` is an optional object. If the included options are not valid, they will not be included.
 
-We can access all of the data passed to our function from the `event` parameter in the the `lambda_handler` function.
+We can access all of the data passed to our function from the `event` parameter in the `lambda_handler` function.
+
+Now, let's jump back to the `lambda_handler` function and add some code to pull out the data from our event.
+
+```python
+def lambda_handler(event, context):
+    logger.info(event)
+
+    # bucket is always required
+    try:
+    	bucket = event['bucket']
+    except KeyError:
+    	error_message = 'Missing required "bucket" parameter from request payload.'
+    	logger.error(error_message)
+    	return {
+    		'status': 400,
+    		'body': json.dumps(error_message),
+    	}
+
+    # html_string and file_key are conditionally required, so let's try to get both
+    try:
+    	file_key = event['file_key']
+    except KeyError:
+    	file_key = None
+
+    try:
+    	html_string = event['html_string']
+    except KeyError:
+    	html_string = None
+
+    if file_key is None and html_string is None:
+    	error_message = (
+    		'Missing both a "file_key" and "html_string" '
+    		'from request payload. One of these must be '
+    		'included.'
+		)
+    	logger.error(error_message)
+    	return {
+    		'status': 400,
+    		'body': json.dumps(error_message),
+    	}
+
+    # Now we can check for the option wkhtmltopdf_options and map them to values
+    # Again, part of our assumptions are that these are valid
+    wkhtmltopdf_options = {}
+    if 'wkhtmltopdf_options' in event:
+    	# Margin is <top> <right> <bottom> <left>
+    	if 'margin' in event['wkhtmltopdf_options']:
+    		margins = event['wkhtmltopdf_options']['margin'].split(' ')
+    		if len(margins) == 4:
+    			wkhtmltopdf_options['margin-top'] = margins[0]
+    			wkhtmltopdf_options['margin-right'] = margins[1]
+    			wkhtmltopdf_options['margin-bottom'] = margins[2]
+    			wkhtmltopdf_options['margin-left'] = margins[3]
+
+    	if 'orientation' in event['wkhtmltopdf_options']:
+    		wkhtmltopdf_options['orientation'] = 'portrait' \
+    			if event['wkhtmltopdf_options']['orientation'].lower() not in ['portrait', 'landscape'] \
+    			else event['wkhtmltopdf_options']['orientation'].lower()
+
+    	if 'title' in event['wkhtmltopdf_options']:
+    		wkhtmltopdf_options['title'] = event['wkhtmltopdf_options']['title']
+```
+
+Now that we have all of the information we need to build out the function, let's put together the remaining pieces of actually calling the wkhtmltopdf executable to finish our lambda handler.
+
+```python
+def lambda_handler(event, context):
+    logger.info(event)
+
+    # bucket is always required
+    try:
+    	bucket = event['bucket']
+    except KeyError:
+    	error_message = 'Missing required "bucket" parameter from request payload.'
+    	logger.error(error_message)
+    	return {
+    		'status': 400,
+    		'body': json.dumps(error_message),
+    	}
+
+    # html_string and file_key are conditionally required, so let's try to get both
+    try:
+    	file_key = event['file_key']
+    except KeyError:
+    	file_key = None
+
+    try:
+    	html_string = event['html_string']
+    except KeyError:
+    	html_string = None
+
+    if file_key is None and html_string is None:
+    	error_message = (
+    		'Missing both a "file_key" and "html_string" '
+    		'from request payload. One of these must be '
+    		'included.'
+		)
+    	logger.error(error_message)
+    	return {
+    		'status': 400,
+    		'body': json.dumps(error_message),
+    	}
+
+    # Now we can check for the option wkhtmltopdf_options and map them to values
+    # Again, part of our assumptions are that these are valid
+    wkhtmltopdf_options = {}
+    if 'wkhtmltopdf_options' in event:
+    	# Margin is <top> <right> <bottom> <left>
+    	if 'margin' in event['wkhtmltopdf_options']:
+    		margins = event['wkhtmltopdf_options']['margin'].split(' ')
+    		if len(margins) == 4:
+    			wkhtmltopdf_options['margin-top'] = margins[0]
+    			wkhtmltopdf_options['margin-right'] = margins[1]
+    			wkhtmltopdf_options['margin-bottom'] = margins[2]
+    			wkhtmltopdf_options['margin-left'] = margins[3]
+
+    	if 'orientation' in event['wkhtmltopdf_options']:
+    		wkhtmltopdf_options['orientation'] = 'portrait' \
+    			if event['wkhtmltopdf_options']['orientation'].lower() not in ['portrait', 'landscape'] \
+    			else event['wkhtmltopdf_options']['orientation'].lower()
+
+    	if 'title' in event['wkhtmltopdf_options']:
+    		wkhtmltopdf_options['title'] = event['wkhtmltopdf_options']['title']
+
+    # If we got a file_key in the request, let's download our file
+    # If not, we'll write the HTML string to a file
+    if file_key is not None:
+    	local_filename = download_s3_file(bucket, file_key)
+    else:
+    	timestamp = str(datetime.now()).replace('.', '').replace(' ', '_')
+    	local_filename = f'/tmp/{timestamp}-html-string.html'
+
+    	# Delete any existing files with that name
+    	try:
+    		os.unlink(local_filename)
+    	except FileNotFoundError:
+    		pass
+
+    	with open(local_filename, 'w') as f:
+    		f.write(html_string)
+
+    # Now we can create our command string to execute and upload the result to s3
+	command = 'wkhtmltopdf  --load-error-handling ignore'  # ignore unecessary errors
+	for key, value in wkhtmltopdf_options.items():
+		if key == 'title':
+			value = f'"{value}"'
+		command += ' --{0} {1}'.format(key, value)
+	command += ' {0} {1}'.format(local_filename, local_filename.replace('.html', '.pdf'))
+
+	# Important! Remember, we said that we are assuming we're accepting valid HTML
+	# this should always be checked to avoid allowing any string to be executed
+	# from this command. The reason we use shell=True here is because our title
+	# can be multiple words.
+    subprocess.run(command, shell=True)
+    logger.info('Successfully generated the PDF.')
+    file_key = upload_file_to_s3(bucket, local_filename.replace('.html', '.pdf'))
+
+    if file_key is None:
+    	error_message = (
+    		'Failed to generate PDF from the given HTML file.'
+    		' Please check to make sure the file is valid HTML.'
+		)
+    	logger.error(error_message)
+    	return {
+    		'status': 400,
+    		'body': json.dumps(error_message),
+    	}
+
+    return {
+    	'status': 200,
+    	'file_key': file_key,
+    }
+```
+
+Now you can go to the Test tab and create the following test event (change your bucket name as necessary)
+```json
+{
+  "bucket": "bucket-for-articles",
+  "html_string": "<!DOCTYPE html><html><head></head><body>This is an example of a simple HTML page.</body></html>",
+  "wkhtmltopdf_options": {
+    "orientation": "portrait",
+    "title": "Test PDF Generation",
+    "margin": "10mm 10mm 10mm 10mm"
+  }
+}
+```
+
+You should get a return event with a 200 status, and a file_key of your converted file ultimately achieving our goal! &#127881;
+
+---
 
