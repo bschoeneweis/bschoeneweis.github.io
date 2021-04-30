@@ -1,9 +1,9 @@
 ---
-title: Visualizing your LinkedIn Connections with Python | Pandas, NetworkX, pyvis
+title: Visualizing your LinkedIn Connections using Python
 author: Bradley Schoeneweis
 date: 2021-04-08
 hero: ./images/hero.jpg
-excerpt: Using Python's Pandas, NetworkX, and pyvis libraries to visualize companies you have connections with on LinkedIn.
+excerpt: Using Python's Pandas, NetworkX, and pyvis to understand and visualize companies within a directly connected LinkedIn network.
 ---
 
 ## tl;dr
