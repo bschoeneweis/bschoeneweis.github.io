@@ -400,7 +400,7 @@ You should see the following message in your notifications channel.
 
 Looks pretty good!  _Note that you can still send plain text messages, you don't need to use HTML._
 
-For some final adjustments, you may have noticed that the message preview on the notification that popped up showed the actual mrkdown characters as opposed to a formatted notification.  This looks a little sloppy, so let's make a new notification title that is similar to an email subject line.
+For some final adjustments, you may have noticed that the message preview on the notification that popped up showed the actual `mrkdwn` characters as opposed to a formatted notification.  This looks a little sloppy, so let's make a new notification title that is similar to an email subject line.
 
 We will briefly look at the basics of Slack's [Block Kit](https://api.slack.com/block-kit), which is a powerful way to add lots of customization to your Slack messages.  You can also explore Block Kit with Slack's [Block Kit Builder](https://app.slack.com/block-kit-builder/) which provides a preview of your Slack message.
 
