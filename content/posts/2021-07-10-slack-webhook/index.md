@@ -40,7 +40,7 @@ Another great feature of Slack is that you can add 3rd party [apps](https://slac
 
 To name a few, you may want to check out the following (assuming you use these tools) which I've found a lot of value in:
 - [Sentry](https://slack.com/apps/A011MFBJEUU-sentry?tab=more_info) - for application monitoring
-- [Google Calender](https://slack.com/apps/ADZ494LHY-google-calendar?tab=more_info) - to stay on top of my meetings schedule
+- [Google Calendar](https://slack.com/apps/ADZ494LHY-google-calendar?tab=more_info) - to stay on top of my meetings schedule
 - [GitHub](https://slack.com/apps/A01BP7R4KNY-github?tab=more_info) - getting notified of pull requests and meaningful changes to important repositories
 - [Jira Cloud](https://slack.com/apps/A2RPP3NFR-jira-cloud?tab=more_info) - staying on top of changes to Jira tickets
 - [AWS Chatbot](https://slack.com/apps/A6L22LZNH-aws-chatbot?tab=more_info) - alerts from CloudWatch alarms
