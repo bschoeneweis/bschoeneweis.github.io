@@ -138,7 +138,7 @@ This book is essentially a collection of best practices, pitfall analysis, and t
 
 [Zero to One: Notes on Startups, or How to Build the Future](https://www.amazon.com/Zero-One-Notes-Startups-Future/dp/0804139296/ref=sr_1_1?crid=1MUZGW6AWVHBJ&dchild=1&keywords=zero+to+one&qid=1628732171&s=books&sprefix=zero+to+%2Cstripbooks%2C177&sr=1-1) by Peter Thiel explores the concepts of creating a new, unique business as opposed to competing in existing and populated markets.
 
-I haven't made it too far into this book so I can say much more about it, but this is a classic read for entrepreneurs or people who want a perspective from an incredibly accomplished and experienced investor and entrepreneur.
+I haven't made it too far into this book so I can't say much more about it, but this is a classic read for entrepreneurs or people who want a perspective from an incredibly accomplished and experienced investor and entrepreneur.
 
 ### Super Founders by Ali Tamaseb
 
@@ -305,5 +305,6 @@ Here is the current list I have on the notes app of my phone for books that I th
 - [Start Small, Stay Small: A Developer's Guide to Launching a Startup](https://www.amazon.com/Start-Small-Stay-Developers-Launching/dp/0615373968/ref=sr_1_1?dchild=1&keywords=Start+small+stay+small&qid=1628974152&s=books&sr=1-1) by Rob Walling
 - [The Startup Owner's Manual: The Step-By-Step Guide for Building a Great Company](https://www.amazon.com/Startup-Owners-Manual-Step-Step/dp/1119690684/ref=sr_1_3?dchild=1&keywords=The+Startup+Owner%E2%80%99s+Manual&qid=1628974194&s=books&sr=1-3) by Steve Blank and Bob Dorf
 - [Combinators: A Centennial View](https://www.amazon.com/Combinators-Centennial-View-Stephen-Wolfram-ebook/dp/B098BQ7R6N/ref=sr_1_1?dchild=1&keywords=Combinators&qid=1628974245&s=books&sr=1-1) by Stephen Wolfram
+- [The Silent Patient](https://www.amazon.com/Silent-Patient-Alex-Michaelides/dp/1250301696/ref=sr_1_1?crid=P91SSELIP56N&dchild=1&keywords=the+silent+patient&qid=1628982823&sprefix=the+silen%2Caps%2C204&sr=8-1) by Alex Michaelides
 
 ---
