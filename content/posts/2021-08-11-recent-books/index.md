@@ -224,6 +224,7 @@ I've heard this book is crazy and it describes a wide range of topics.  It's goi
 ## Some other books I've read
 For those looking for even more, here are three Michael Lewis books that are great and classic reads for those more interested in finance, history, psychology, and tech.
 
+
 ### Flash Boys by Michael Lewis
 
 <div className="Image__Small">
