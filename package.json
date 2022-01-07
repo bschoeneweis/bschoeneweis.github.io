@@ -3,6 +3,7 @@
   "scripts": {
     "dev": "next dev",
     "build": "node ./scripts/gen-rss.js && next build",
+    "export": "next export",
     "start": "next start"
   },
   "dependencies": {
