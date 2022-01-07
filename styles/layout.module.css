@@ -1,0 +1,37 @@
+.HomeContainer {
+  max-width: 60%;
+  margin-left: auto;
+  margin-right: auto;
+  padding-top: 5rem;
+  padding-bottom: 8rem;
+}
+
+.ArticleContainer {
+  max-width: 60%;
+  margin-left: auto;
+  margin-right: auto;
+  padding-top: 1rem;
+  padding-bottom: 8rem;
+}
+
+.header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.LayoutLinks {
+  margin: 3rem 0 0;
+  display: flex;
+  justify-content: space-between;
+}
+
+.HomeName {
+  color: #1a202c;
+  font-weight: 800;
+  font-size: 2.25em;
+  margin-top: 0;
+  margin-bottom: 0.8888889em;
+  line-height: 1.1111111;
+  letter-spacing: -0.02em;
+}

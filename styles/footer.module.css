@@ -1,0 +1,42 @@
+@media screen and (max-width: 480px) {
+  .FooterName{
+    font-size: 90%;
+  }
+
+  .Footer {
+    width: 90% !important;
+  }
+}
+
+@media screen and (max-width: 992px) {
+  .FooterContainer {
+    position: relative !important;
+  }
+}
+
+.SocialLinkLogo {
+  margin-top: .5rem !important;
+  margin-bottom: .5rem !important;
+  margin-left: 1rem;
+}
+
+.FooterContainer {
+  margin-top: 1rem;
+  width: 100%;
+}
+
+.Footer {
+  display: flex;
+  justify-content: space-between;
+  color: #6c757d;
+  padding-top: .75rem;
+  padding-bottom: .75rem;
+  margin: auto;
+  width: 60%;
+  border-top: 1px solid rgba(156, 156, 156, 0.4);
+}
+
+.FooterLinks {
+  display: flex;
+  justify-content: space-evenly;
+}

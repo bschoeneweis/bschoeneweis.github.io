@@ -1,0 +1,17 @@
+.BioList {
+  padding: 0;
+  margin: 0;
+  margin-bottom: 1.5rem;
+  padding-bottom: 2.5rem;
+  border-bottom: 1px solid rgba(156, 156, 156, 0.4);
+  letter-spacing: -0.02em;
+}
+
+.BioListItem {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  font-size: 1rem;
+  padding-bottom: 1rem;
+  letter-spacing: -0.02em;
+}

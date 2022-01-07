@@ -1,0 +1,14 @@
+.Author {
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1px solid rgba(156, 156, 156, 0.4);
+  padding-bottom: 1rem;
+  padding-left: .5rem;
+  width: 80%;
+  margin-top: 1rem;
+}
+
+.AuthorDate {
+  margin: auto;
+  margin-left: 1rem;
+}
