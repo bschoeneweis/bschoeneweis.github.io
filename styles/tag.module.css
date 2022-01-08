@@ -33,4 +33,5 @@
 .TagLabel {
   margin-top: 2.25rem;
   margin-left: 0.25rem;
+  white-space: nowrap;
 }
