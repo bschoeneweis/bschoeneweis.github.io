@@ -8,18 +8,18 @@ async function generate() {
     title: 'Bradley Schoeneweis',
     site_url: 'https://bradleyschoeneweis.com',
     feed_url: 'https://bradleyschoeneweis.com/feed.xml'
-  })
+  });
 
-  const posts = await fs.readdir(path.join(__dirname, '..', 'pages', 'posts'))
+  const posts = await fs.readdir(path.join(__dirname, '..', 'posts'));
 
   await Promise.all(
     posts.map(async (name) => {
-      if (name.startsWith('index.')) return
+      if (name.startsWith('index.')) return;
 
       const content = await fs.readFile(
-        path.join(__dirname, '..', 'pages', 'posts', name)
-      )
-      const frontmatter = matter(content)
+        path.join(__dirname, '..', 'posts', name)
+      );
+      const frontmatter = matter(content);
 
       feed.item({
         title: frontmatter.data.title,
@@ -28,11 +28,11 @@ async function generate() {
         description: frontmatter.data.description,
         tags: frontmatter.data.tags,
         author: 'Bradley Schoeneweis',
-      })
+      });
     })
   )
 
-  await fs.writeFile('./public/feed.xml', feed.xml({ indent: true }))
+  await fs.writeFile('./public/feed.xml', feed.xml({ indent: true }));
 }
 
 generate()
