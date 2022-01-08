@@ -1,4 +1,3 @@
-import Image from 'next/image'
 import Date from './Date'
 
 import styles from '../styles/author.module.css'
@@ -7,12 +6,12 @@ import utilStyles from '../styles/utils.module.css'
 export default function Author({date}) {
   return (
     <div className={styles.Author}>
-      <Image
-        priority
-        src="/images/profile.jpg"
+      <img
+        loading='eager'
+        src='/images/profile.jpg'
         height={40}
         width={40}
-        alt="Bradley Schoeneweis"
+        alt='Bradley Schoeneweis'
         className={utilStyles.borderCircle}
       />
       <div className={`${utilStyles.lightText} ${styles.AuthorDate}`}>
