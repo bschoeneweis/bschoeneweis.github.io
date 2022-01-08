@@ -1,5 +1,15 @@
+@media screen and (min-width: 991.98px) {
+  .HomeContainer {
+    max-width: 60% !important;
+  }
+
+  .ArticleContainer {
+    max-width: 60% !important;
+  }
+}
+
 .HomeContainer {
-  max-width: 60%;
+  max-width: 80%;
   margin-left: auto;
   margin-right: auto;
   padding-top: 5rem;
@@ -7,7 +17,7 @@
 }
 
 .ArticleContainer {
-  max-width: 60%;
+  max-width: 80%;
   margin-left: auto;
   margin-right: auto;
   padding-top: 1rem;
