@@ -1,7 +1,7 @@
-import Head from 'next/head'
 import Layout from '../../components/Layout'
 import PostList from '../../components/PostList'
 import Tag from '../../components/Tag'
+
 import { getAllTags, getPostDataByTag } from '../../lib/tags'
 
 import utilStyles from '../../styles/utils.module.css'
@@ -27,11 +27,7 @@ export async function getStaticPaths() {
 
 export default function TagPage({ tag, taggedPosts }) {
   return (
-    <Layout tagPage>
-      <Head>
-        <title>Posts tagged "{tag}"</title>
-      </Head>
- 
+    <Layout tagPage title={`Posts tagged "${tag}"`}> 
       <header>
         <Tag tag={tag} isHeader/>
       </header>

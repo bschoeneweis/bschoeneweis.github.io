@@ -1,5 +1,4 @@
 import { useState } from 'react';
-import Head from 'next/head'
 
 import Checkbox from '../components/Checkbox'
 import Layout from '../components/Layout'
@@ -39,11 +38,7 @@ export default function TagPage({ tagsWithPosts }) {
   });
 
   return (
-    <Layout>
-      <Head>
-        <title>All Tags</title>
-      </Head>
- 
+    <Layout title="All Tags">
       <header>
         <h1 className={utilStyles.headingXl}>All Tags</h1>
         <div className={utilStyles.floatRight}>

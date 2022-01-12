@@ -1,4 +1,3 @@
-import Head from 'next/head'
 import ReactMarkdown from 'react-markdown'
 import rehypeRaw from 'rehype-raw'
 
@@ -31,10 +30,7 @@ export async function getStaticPaths() {
 
 export default function Post({ postData }) {
   return (
-    <Layout>
-      <Head>
-        <title>{postData.title}</title>
-      </Head>
+    <Layout title={postData.title}>
       <article>
         <h1 className={utilStyles.headingXl}>{postData.title}</h1>
         <TagList tags={postData.tags} isPost />

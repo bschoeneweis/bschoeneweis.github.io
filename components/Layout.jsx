@@ -2,15 +2,14 @@ import Head from 'next/head'
 import Link from 'next/link'
 import Footer from './Footer';
 
+import { getMetaImage } from '../lib/meta';
+
 import styles from '../styles/layout.module.css'
 
 export const siteTitle = 'Bradley Schoeneweis';
 const name = 'Bradley Schoeneweis';
-const metaImage = (`https://og-image.vercel.app/${encodeURI(
-  siteTitle
-)}.png?theme=light&md=1&fontSize=50px&images=https%3A%2F%2Fassets.vercel.com%2Fimage%2Fupload%2Ffront%2Fassets%2Fdesign%2Fhyper-color-logo.svg&widths=350&heights=350`);
 
-export default function Layout({ children, home, tagPage }) {
+export default function Layout({ children, home, tagPage, title }) {
   let tagLink;
   
   if (tagPage) {
@@ -20,6 +19,8 @@ export default function Layout({ children, home, tagPage }) {
       </Link>
     );
   }
+
+  const metaImage = getMetaImage(title || siteTitle);
 
   return (
     <>
@@ -38,14 +39,15 @@ export default function Layout({ children, home, tagPage }) {
             content={metaImage}
           />
           <meta name="robots" content="follow, index" />
-          <meta name="og:title" content={siteTitle} />
-          <meta property="og:site_name" content={siteTitle} />
+          <meta name="og:title" content={title || siteTitle} />
+          <meta property="og:site_name" content={title || siteTitle} />
           <meta property="og:description" content={name} />
           <meta name="twitter:card" content="summary_large_image" />
           <meta name="twitter:site" content="@bschoeneweis" />
           <meta name="twitter:title" content={name} />
           <meta name="twitter:description" content={name} />
-          <meta name="twitter:image" content={metaImage} />       
+          <meta name="twitter:image" content={metaImage} />   
+          <title>{title || siteTitle}</title>    
         </Head>
         <header>
           {home && <h1 className={styles.HomeName}>{name}</h1>}
