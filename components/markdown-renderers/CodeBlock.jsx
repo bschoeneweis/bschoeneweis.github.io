@@ -1,4 +1,6 @@
-import { atomOneDark, CopyBlock } from "react-code-blocks";
+import { atomOneDark, CopyBlock } from 'react-code-blocks';
+
+import styles from '../../styles/codeblock.module.css'
 
 const CodeBlock = ({node, inline, className, children, ...props}) => {
   const showLineNumbers = true;
@@ -6,13 +8,7 @@ const CodeBlock = ({node, inline, className, children, ...props}) => {
   const codeBlock = true;
   const match = /language-(\w+)/.exec(className || '');
   return !inline && match ? (
-    <div
-      style={{
-        fontFamily: 'Fira Code',
-        paddingTop: '1rem',
-        paddingBottom: '1rem',
-        fontSize: '.9rem',
-      }}
+    <div className={styles.CodeBlock}
     >
       <CopyBlock 
         language={match[1]} 

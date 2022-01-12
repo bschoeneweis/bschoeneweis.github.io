@@ -99,3 +99,7 @@
 .displayFlex {
   display: flex;
 }
+
+.heightMaxContent {
+  height: max-content;
+}

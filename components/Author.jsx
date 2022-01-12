@@ -12,7 +12,7 @@ export default function Author({date}) {
         height={40}
         width={40}
         alt='Bradley Schoeneweis'
-        className={utilStyles.borderCircle}
+        className={`${utilStyles.borderCircle} ${utilStyles.heightMaxContent}`}
       />
       <div className={`${utilStyles.lightText} ${styles.AuthorDate}`}>
       Bradley Schoeneweis 
