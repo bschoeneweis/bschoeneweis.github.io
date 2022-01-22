@@ -20,14 +20,12 @@
   display: flex;
   flex-direction: row;
   justify-content: left;
+  flex-wrap: wrap;
+  column-gap: 8px;
 }
 
 .TagListPost {
   padding-left: .5rem;
-}
-
-.TagListItem {
-  margin-left: 8px;
 }
 
 .TagLabel {
