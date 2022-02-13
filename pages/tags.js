@@ -40,7 +40,7 @@ export default function TagPage({ tagsWithPosts }) {
   return (
     <Layout title="All Tags">
       <header>
-        <h1 className={utilStyles.headingXl}>All Tags</h1>
+        <h1 className={utilStyles.headingXl}>All tags</h1>
         <div className={utilStyles.floatRight}>
           <Checkbox label={'Show posts'} value={showPosts} onChange={(x) => setShowPosts(!showPosts)} />
         </div>

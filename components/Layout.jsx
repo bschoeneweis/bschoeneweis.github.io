@@ -15,7 +15,7 @@ export default function Layout({ children, home, tagPage, title }) {
   if (tagPage) {
     tagLink = (
       <Link href="/tags">
-        <a>View All Tags</a>
+        <a>View all tags</a>
       </Link>
     );
   }
