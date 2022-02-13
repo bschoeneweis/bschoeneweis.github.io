@@ -1,5 +1,5 @@
 ---
-title: 'Visualizing your LinkedIn Connections using Python'
+title: 'Visualizing your LinkedIn connections using Python'
 date: '2021-04-08'
 tags: ['python', 'pandas', 'networkx', 'data-analysis']
 description: "Using Python's Pandas, NetworkX, and pyvis to understand and visualize companies within a directly connected LinkedIn network."

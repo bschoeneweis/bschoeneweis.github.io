@@ -25,7 +25,7 @@ const CodeBlock = ({node, inline, className, children, ...props}) => {
         border: 'none',
         fontVariantLigatures: 'none',
         backgroundColor: 'rgb(246, 249, 252)',
-        padding: '2px',
+        padding: '3px',
         borderRadius: '3px',
       }}
       {...props}

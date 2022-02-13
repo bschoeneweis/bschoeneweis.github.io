@@ -77,7 +77,7 @@ _For our goal, AWS Lambda is a powerful tool for the following reasons_
 When I was first using this library, I was also using [`pdfkit`](https://pypi.org/project/pdfkit/) to drive this interaction.  At the top of the installation instructions, you can see the following warning:
 
 <p style="background-color: orange; padding: 7px 20px; text-align: center; border-radius: 6px;">
-<i>"<b>Warning!</b>Version in debian/ubuntu repos have reduced functionality (because it compiled without the wkhtmltopdf QT patches), such as adding outlines, headers, footers, TOC etc. To use this options you should install static binary from wkhtmltopdf site"</i>
+<i>"<b>Warning!</b>&nbsp;Version in debian/ubuntu repos have reduced functionality (because it compiled without the wkhtmltopdf QT patches), such as adding outlines, headers, footers, TOC etc. To use this options you should install static binary from wkhtmltopdf site"</i>
 </p>
 
 When I first installed `wkhtmltopdf`, I didn't heed the warning and just ran the following:

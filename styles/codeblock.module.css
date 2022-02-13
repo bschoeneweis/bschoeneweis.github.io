@@ -1,6 +1,6 @@
 @media screen and (max-width: 992px) {
   .CodeBlock {
-    font-size: .8rem !important;
+    font-size: .8em !important;
   }
 }
 
@@ -8,5 +8,9 @@
   font-family: 'Fira Code';
   padding-top: 1rem;
   padding-bottom: 1rem;
-  font-size: .9rem;
+  font-size: .9em;
+}
+
+.CodeBlock button {
+  cursor: pointer;
 }

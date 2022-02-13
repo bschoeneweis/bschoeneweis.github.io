@@ -48,3 +48,38 @@ span.book-source {
   justify-content: center;
   font-size: 8px;
 }
+
+blockquote {
+	background: #f9f9f9;
+	border-left: 4px solid #ff3d98;
+	margin: 1.5em 10px;
+	padding: 1em 10px;
+}
+
+blockquote p {
+	display: inline;
+  font-size: 1.15em;
+  font-style: italic;
+}
+
+li {
+  margin-bottom: 2px;
+}
+
+li ul {
+  margin: 4px 0;
+}
+
+h2 code {
+  font-size: 1.25rem;
+}
+
+.ZoomImageWrapper img {
+  transition: transform 0.25s ease;
+  cursor: zoom-in;
+}
+
+.ZoomImageWrapper input[type=checkbox]:checked~img {
+  transform: scale(1.25);
+  cursor: zoom-out;
+}

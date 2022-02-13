@@ -1,3 +1,5 @@
+import utilStyles from '../../styles/utils.module.css'
+
 const Paragraph = ({node, children, ...props}) => {
   // Convert Markdown img to a stylized html img component and set properties.
   // example: ![AltText {priority}{768x432}](/image.jpg)
@@ -18,15 +20,19 @@ const Paragraph = ({node, children, ...props}) => {
           display: "flex",
           justifyContent: "center",
         }}
+        className='ZoomImageWrapper'
       >
-        <img
-          src={image.properties.src}
-          width={width}
-          height={height}
-          className='postImg'
-          alt={alt}
-          loading={loading}
-        />
+        <label>
+          <input className={utilStyles.displayNone} type="checkbox" />
+          <img
+            src={image.properties.src}
+            width={width}
+            height={height}
+            className='postImg'
+            alt={alt}
+            loading={loading}
+          />
+        </label>
       </div>
     )
   }

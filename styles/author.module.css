@@ -12,3 +12,8 @@
   margin: auto;
   margin-left: 1rem;
 }
+
+.AuthorImage {
+  height: max-content;
+  max-height: 40px;
+}
