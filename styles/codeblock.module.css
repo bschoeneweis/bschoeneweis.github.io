@@ -1,7 +1,7 @@
 @media screen and (max-width: 992px) {
   .CodeBlock {
     font-size: .8em !important;
-    -webkit-text-size-adjust: none;
+    -webkit-text-size-adjust: 100%;
   }
 }
 
