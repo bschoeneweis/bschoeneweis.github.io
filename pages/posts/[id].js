@@ -30,7 +30,7 @@ export async function getStaticPaths() {
 
 export default function Post({ postData }) {
   return (
-    <Layout title={postData.title}>
+    <Layout title={postData.title} description={postData.description}>
       <article>
         <h1 className={utilStyles.headingXl}>{postData.title}</h1>
         <TagList tags={postData.tags} isPost />

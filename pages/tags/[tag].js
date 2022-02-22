@@ -26,8 +26,9 @@ export async function getStaticPaths() {
 }
 
 export default function TagPage({ tag, taggedPosts }) {
+  const title = `Posts tagged "${tag}"`;
   return (
-    <Layout tagPage title={`Posts tagged "${tag}"`}> 
+    <Layout tagPage title={title} description={title}> 
       <header>
         <Tag tag={tag} isHeader/>
       </header>

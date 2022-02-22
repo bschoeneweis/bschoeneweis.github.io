@@ -37,8 +37,9 @@ export default function TagPage({ tagsWithPosts }) {
     );
   });
 
+  const title = 'All Tags';
   return (
-    <Layout title="All Tags">
+    <Layout title={title} description={title}>
       <header>
         <h1 className={utilStyles.headingXl}>All tags</h1>
         <div className={utilStyles.floatRight}>

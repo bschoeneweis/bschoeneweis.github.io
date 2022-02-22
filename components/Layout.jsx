@@ -9,7 +9,7 @@ import styles from '../styles/layout.module.css'
 export const siteTitle = 'Bradley Schoeneweis';
 const name = 'Bradley Schoeneweis';
 
-export default function Layout({ children, home, tagPage, title }) {
+export default function Layout({ children, home, tagPage, title, description }) {
   let tagLink;
   
   if (tagPage) {
@@ -21,6 +21,7 @@ export default function Layout({ children, home, tagPage, title }) {
   }
 
   const metaImage = getMetaImage(title || siteTitle);
+  const metaDescription = description || 'Bradley Schoeneweis';
 
   return (
     <>
@@ -32,7 +33,7 @@ export default function Layout({ children, home, tagPage, title }) {
           />
           <meta
             name="description"
-            content="Bradley Schoeneweis"
+            content={metaDescription}
           />
           <meta
             property="og:image"
@@ -41,11 +42,11 @@ export default function Layout({ children, home, tagPage, title }) {
           <meta name="robots" content="follow, index" />
           <meta name="og:title" content={title || siteTitle} />
           <meta property="og:site_name" content={title || siteTitle} />
-          <meta property="og:description" content={name} />
+          <meta property="og:description" content={metaDescription} />
           <meta name="twitter:card" content="summary_large_image" />
           <meta name="twitter:site" content="@bschoeneweis" />
           <meta name="twitter:title" content={name} />
-          <meta name="twitter:description" content={name} />
+          <meta name="twitter:description" content={metaDescription} />
           <meta name="twitter:image" content={metaImage} />   
           <title>{title || siteTitle}</title>    
         </Head>
