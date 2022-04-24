@@ -4,8 +4,16 @@
         <description><![CDATA[Bradley Schoeneweis]]></description>
         <link>https://bradleyschoeneweis.com</link>
         <generator>RSS for Node</generator>
-        <lastBuildDate>Sun, 24 Apr 2022 01:05:13 GMT</lastBuildDate>
+        <lastBuildDate>Sun, 24 Apr 2022 01:43:05 GMT</lastBuildDate>
         <atom:link href="https://bradleyschoeneweis.com/feed.xml" rel="self" type="application/rss+xml"/>
+        <item>
+            <title><![CDATA[Converting HTML to a PDF using Python, AWS Lambda, and wkhtmltopdf]]></title>
+            <description><![CDATA[Building an AWS lambda function that uses Python and wkhtmltopdf to convert an HTML file to a PDF file.]]></description>
+            <link>/posts/converting-html-to-pdf</link>
+            <guid isPermaLink="true">/posts/converting-html-to-pdf</guid>
+            <dc:creator><![CDATA[Bradley Schoeneweis]]></dc:creator>
+            <pubDate>Thu, 29 Apr 2021 00:00:00 GMT</pubDate>
+        </item>
         <item>
             <title><![CDATA[Forecasting SPY prices using Facebook's Prophet]]></title>
             <description><![CDATA[Using Facebook’s Prophet, an open-source, time series forecasting procedure to predict SPY (SPDR S&P 500 ETF Trust) closing prices.]]></description>
@@ -21,14 +29,6 @@
             <guid isPermaLink="true">/posts/rebuilding-my-blog</guid>
             <dc:creator><![CDATA[Bradley Schoeneweis]]></dc:creator>
             <pubDate>Sat, 23 Apr 2022 00:00:00 GMT</pubDate>
-        </item>
-        <item>
-            <title><![CDATA[Converting HTML to a PDF using Python, AWS Lambda, and wkhtmltopdf]]></title>
-            <description><![CDATA[Building an AWS lambda function that uses Python and wkhtmltopdf to convert an HTML file to a PDF file.]]></description>
-            <link>/posts/converting-html-to-pdf</link>
-            <guid isPermaLink="true">/posts/converting-html-to-pdf</guid>
-            <dc:creator><![CDATA[Bradley Schoeneweis]]></dc:creator>
-            <pubDate>Thu, 29 Apr 2021 00:00:00 GMT</pubDate>
         </item>
         <item>
             <title><![CDATA[Setting up a Slack webhook for simple notifications]]></title>
