@@ -20,13 +20,13 @@ export async function getStaticProps() {
 
   return {
     props: {
-      tagsWithPosts
-    }
-  }
+      tagsWithPosts,
+    },
+  };
 }
 
 export default function TagPage({ tagsWithPosts }) {
-  const [showPosts, setShowPosts] = useState(true);
+  const [showPosts, setShowPosts] = useState(false);
 
   const tagAndPostList = Object.keys(tagsWithPosts).map((tag) => {
     return (

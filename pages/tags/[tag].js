@@ -7,14 +7,14 @@ import { getAllTags, getPostDataByTag } from '../../lib/tags'
 import utilStyles from '../../styles/utils.module.css'
 
 export async function getStaticProps({ params }) {
-  const tag = params.tag;
+  const { tag } = params;
   const taggedPosts = await getPostDataByTag(tag);
   return {
     props: {
       tag,
       taggedPosts,
-    }
-  }
+    },
+  };
 }
 
 export async function getStaticPaths() {
@@ -22,7 +22,7 @@ export async function getStaticPaths() {
   return {
     paths,
     fallback: false,
-  }
+  };
 }
 
 export default function TagPage({ tag, taggedPosts }) {

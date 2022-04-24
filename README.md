@@ -1,1 +1,1 @@
-Blog made with [Next.js](https://nextjs.org/).
+bradleyschoeneweis.com
