@@ -4,6 +4,7 @@
     "dev": "next dev",
     "build": "node ./scripts/gen-rss.js && next build",
     "export": "next export",
+    "lint": "next lint",
     "start": "next start"
   },
   "dependencies": {
@@ -18,5 +19,9 @@
     "remark": "^14.0.2",
     "remark-html": "^15.0.1",
     "rss": "^1.2.2"
+  },
+  "devDependencies": {
+    "eslint": "8.14.0",
+    "eslint-config-next": "12.1.5"
   }
 }
