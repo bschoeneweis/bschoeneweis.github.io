@@ -1,12 +1,13 @@
 import { atomOneDark, CopyBlock } from 'react-code-blocks';
 
-import styles from '../../styles/codeblock.module.css'
+import styles from '../../styles/codeblock.module.css';
 
-const CodeBlock = ({node, inline, className, children, ...props}) => {
+const CodeBlock = ({ node, inline, className, children, ...props }) => {
   const showLineNumbers = true;
   const wrapLines = true;
   const codeBlock = true;
   const match = /language-(\w+)/.exec(className || '');
+
   return !inline && match ? (
     <div className={styles.CodeBlock}
     >

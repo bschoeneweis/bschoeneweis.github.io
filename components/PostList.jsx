@@ -1,10 +1,10 @@
-import Link from 'next/link'
-import Date from '../components/Date'
+import Link from 'next/link';
+import Date from '../components/Date';
 import TagList from './TagList';
 
-import utilStyles from '../styles/utils.module.css'
+import utilStyles from '../styles/utils.module.css';
 
-export default function PostList({ posts, withPadding }) {
+const PostList = ({ posts, withPadding }) => {
   return (
     <ul className={withPadding ? `${utilStyles.list} ${utilStyles.marginLeft1rem}` : utilStyles.list}>
       {posts.map(({ id, date, title, tags }) => (
@@ -24,3 +24,5 @@ export default function PostList({ posts, withPadding }) {
     </ul>
   );
 };
+
+export default PostList;

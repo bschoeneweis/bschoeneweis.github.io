@@ -1,8 +1,8 @@
-import styles from '../styles/footer.module.css'
+import styles from '../styles/footer.module.css';
 
 const YEAR = new Date().getFullYear();
 
-export default function Footer({ home }) {
+const Footer = () => {
   return (
     <footer className={styles.FooterContainer}>
       <div className={styles.Footer}>
@@ -30,3 +30,5 @@ export default function Footer({ home }) {
     </footer>
   );
 };
+
+export default Footer;

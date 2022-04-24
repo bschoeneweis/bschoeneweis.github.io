@@ -116,7 +116,7 @@ import matter from 'gray-matter';
 
 const postsDirectory = path.join(process.cwd(), 'posts');
 
-export async function getAllTags() {
+export const getAllTags = () => {
   const fileNames = fs.readdirSync(postsDirectory);
   const tags = new Set();
 
@@ -135,19 +135,19 @@ export async function getAllTags() {
   });
 
   return Array.from(tags);
-}
+};
 ```
 
 Now we can call this within `pages/tags/[tag].js` under `getStaticPaths()`
 
 ```js
-export async function getStaticPaths() {
-  const paths = await getAllTags();
+export const getStaticPaths = () => {
+  const paths = getAllTags();
   return {
     paths,
     fallback: false,
   }
-}
+};
 ```
 
 Now, we can add another helper function `getPostDataByTag()` in `lib/tags.js` to fulfill `getStaticProps()`.  This is basically what we already do with `pages/posts/[id].js`, and it's not very efficient to do this twice, but all of this is happening at build time so it's not a huge deal for us.
@@ -163,7 +163,7 @@ import html from 'remark-html';
 
 const postsDirectory = path.join(process.cwd(), 'posts');
 
-export async function getPostDataByTag(tag) {
+export const getPostDataByTag = async (tag) => {
   const fileNames = fs.readdirSync(postsDirectory);
   const posts = [];
 
@@ -195,13 +195,13 @@ export async function getPostDataByTag(tag) {
   });
 
   return posts;
-}
+};
 ```
 
 We can call this helper function in `pages/tags/[tag].js` under `getStaticProps()`
 
 ```js
-export async function getStaticProps({ params }) {
+export const getStaticProps = async ({ params }) => {
   const { tag } = params;
   const taggedPosts = await getPostDataByTag(tag);
   return {
@@ -210,13 +210,13 @@ export async function getStaticProps({ params }) {
       taggedPosts,
     },
   };
-}
+};
 ```
 
 Now, you can render the associated tag pages as you wish, but I did it with a few components I had set up:
 
 ```jsx
-export default function TagPage({ tag, taggedPosts }) {
+const TagPage = ({ tag, taggedPosts }) => {
   const title = `Posts tagged "${tag}"`;
   return (
     <Layout tagPage title={title} description={title}> 
@@ -229,7 +229,9 @@ export default function TagPage({ tag, taggedPosts }) {
       </section>
     </Layout>
   );
-}
+};
+
+export default TagPage;
 ```
 
 ### All tags
@@ -240,11 +242,11 @@ To do this, we can add `pages/tags.js`, which can be reached at [/tags](/tags).
 Once again, we want to implement `getStaticProps()` so we can pre-render this page at build time.  Luckily, we can reuse the two functions we wrote in `lib/tags.js` to make this easy.
 
 ```js
-import { getAllTags, getPostDataByTag } from '../lib/tags'
+import { getAllTags, getPostDataByTag } from '../lib/tags';
 
-export async function getStaticProps() {
+export const getStaticProps = async () => {
   const tagsWithPosts = {};
-  const allTags = await getAllTags();
+  const allTags = getAllTags();
 
   for (const tagPath of allTags) {
     const tag = tagPath.replace('/tags/', '');
@@ -256,13 +258,13 @@ export async function getStaticProps() {
       tagsWithPosts,
     },
   };
-}
+};
 ```
 
 Now, you can render this as you'd like using `tagsWithPosts` as a prop in your page component.  I also like having a toggle to show/hide the associated posts.
 
 ```jsx
-export default function TagPage({ tagsWithPosts }) {
+const TagPage = ({ tagsWithPosts }) => {
   const [showPosts, setShowPosts] = useState(false);
 
   const tagAndPostList = Object.keys(tagsWithPosts).map((tag) => {
@@ -288,7 +290,9 @@ export default function TagPage({ tagsWithPosts }) {
 
     </Layout>
   );
-}
+};
+
+export default TagPage;
 ```
 
 Now we have a page with all of our tags 🙌.

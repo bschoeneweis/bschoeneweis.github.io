@@ -1,34 +1,34 @@
-import ReactMarkdown from 'react-markdown'
-import rehypeRaw from 'rehype-raw'
+import ReactMarkdown from 'react-markdown';
+import rehypeRaw from 'rehype-raw';
 
-import Layout from '../../components/Layout'
-import TagList from '../../components/TagList'
-import CodeBlock from '../../components/markdown-renderers/CodeBlock'
-import Paragraph from '../../components/markdown-renderers/Paragraph'
-import Author from '../../components/Author'
+import Layout from '../../components/Layout';
+import TagList from '../../components/TagList';
+import CodeBlock from '../../components/markdown-renderers/CodeBlock';
+import Paragraph from '../../components/markdown-renderers/Paragraph';
+import Author from '../../components/Author';
 
-import { getAllPostIds, getPostData } from '../../lib/posts'
+import { getAllPostIds, getPostData } from '../../lib/posts';
 
-import utilStyles from '../../styles/utils.module.css'
+import utilStyles from '../../styles/utils.module.css';
 
-export async function getStaticProps({ params }) {
+export const getStaticProps = async ({ params }) => {
   const postData = await getPostData(params.id);
   return {
     props: {
       postData,
-    }
-  }
-}
+    },
+  };
+};
 
-export async function getStaticPaths() {
+export const getStaticPaths = () => {
   const paths = getAllPostIds();
   return {
     paths,
     fallback: false,
   }
-}
+};
 
-export default function Post({ postData }) {
+const Post = ({ postData }) => {
   return (
     <Layout title={postData.title} description={postData.description}>
       <article>
@@ -49,4 +49,6 @@ export default function Post({ postData }) {
       </article>
     </Layout>
   );
-}
+};
+
+export default Post;

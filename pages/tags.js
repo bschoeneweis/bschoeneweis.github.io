@@ -9,9 +9,9 @@ import { getAllTags, getPostDataByTag } from '../lib/tags'
 
 import utilStyles from '../styles/utils.module.css'
 
-export async function getStaticProps() {
+export const getStaticProps = async () => {
   const tagsWithPosts = {};
-  const allTags = await getAllTags();
+  const allTags = getAllTags();
 
   for (const tagPath of allTags) {
     const tag = tagPath.replace('/tags/', '');
@@ -23,9 +23,9 @@ export async function getStaticProps() {
       tagsWithPosts,
     },
   };
-}
+};
 
-export default function TagPage({ tagsWithPosts }) {
+const TagPage = ({ tagsWithPosts }) => {
   const [showPosts, setShowPosts] = useState(false);
 
   const tagAndPostList = Object.keys(tagsWithPosts).map((tag) => {
@@ -51,4 +51,6 @@ export default function TagPage({ tagsWithPosts }) {
 
     </Layout>
   );
-}
+};
+
+export default TagPage;

@@ -1,12 +1,12 @@
-import Layout from '../../components/Layout'
-import PostList from '../../components/PostList'
-import Tag from '../../components/Tag'
+import Layout from '../../components/Layout';
+import PostList from '../../components/PostList';
+import Tag from '../../components/Tag';
 
-import { getAllTags, getPostDataByTag } from '../../lib/tags'
+import { getAllTags, getPostDataByTag } from '../../lib/tags';
 
-import utilStyles from '../../styles/utils.module.css'
+import utilStyles from '../../styles/utils.module.css';
 
-export async function getStaticProps({ params }) {
+export const getStaticProps = async ({ params }) => {
   const { tag } = params;
   const taggedPosts = await getPostDataByTag(tag);
   return {
@@ -15,17 +15,17 @@ export async function getStaticProps({ params }) {
       taggedPosts,
     },
   };
-}
+};
 
-export async function getStaticPaths() {
-  const paths = await getAllTags();
+export const getStaticPaths = () => {
+  const paths = getAllTags();
   return {
     paths,
     fallback: false,
   };
-}
+};
 
-export default function TagPage({ tag, taggedPosts }) {
+const TagPage = ({ tag, taggedPosts }) => {
   const title = `Posts tagged "${tag}"`;
   return (
     <Layout tagPage title={title} description={title}> 
@@ -39,4 +39,6 @@ export default function TagPage({ tag, taggedPosts }) {
 
     </Layout>
   );
-}
+};
+
+export default TagPage;

@@ -1,9 +1,9 @@
-import Link from 'next/link'
+import Link from 'next/link';
 
-import utilStyles from '../styles/utils.module.css'
-import styles from '../styles/tag.module.css'
+import utilStyles from '../styles/utils.module.css';
+import styles from '../styles/tag.module.css';
 
-export default function Tag({ tag, useLink, isHeader, index, label }) {
+const Tag = ({ tag, useLink, isHeader, index, label }) => {
   let spanClasses = isHeader ? `${styles.Badge} ${styles.BadgeLarge}` : `${styles.Badge}`;
   if (useLink) {
     spanClasses += ` ${utilStyles.cursorPointer}`;
@@ -28,3 +28,5 @@ export default function Tag({ tag, useLink, isHeader, index, label }) {
   
   return renderedTag;
 };
+
+export default Tag;

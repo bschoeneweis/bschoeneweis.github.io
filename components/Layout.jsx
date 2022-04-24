@@ -9,7 +9,7 @@ import styles from '../styles/layout.module.css'
 export const siteTitle = 'Bradley Schoeneweis';
 const name = 'Bradley Schoeneweis';
 
-export default function Layout({ children, home, tagPage, title, description }) {
+const Layout = ({ children, home, tagPage, title, description }) => {
   let tagLink;
   
   if (tagPage) {
@@ -66,4 +66,6 @@ export default function Layout({ children, home, tagPage, title, description }) 
       <Footer home={home} />
     </>
   )
-}
+};
+
+export default Layout;

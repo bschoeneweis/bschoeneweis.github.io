@@ -1,21 +1,21 @@
-import Head from 'next/head'
-import Layout, { siteTitle } from '../components/Layout'
-import PostList from '../components/PostList'
-import { getSortedPostsData } from '../lib/posts'
+import Head from 'next/head';
+import Layout, { siteTitle } from '../components/Layout';
+import PostList from '../components/PostList';
+import { getSortedPostsData } from '../lib/posts';
 
-import utilStyles from '../styles/utils.module.css'
-import styles from '../styles/home.module.css'
+import utilStyles from '../styles/utils.module.css';
+import styles from '../styles/home.module.css';
 
-export async function getStaticProps() {
+export const getStaticProps = () => {
   const allPostsData = getSortedPostsData();
   return {
     props: {
-      allPostsData
-    }
-  }
-}
+      allPostsData,
+    },
+  };
+};
 
-export default function Home({ allPostsData }) {
+const Home = ({ allPostsData }) => {
   return (
     <Layout home>
       <Head>
@@ -35,4 +35,6 @@ export default function Home({ allPostsData }) {
       </section>
     </Layout>
   )
-}
+};
+
+export default Home;

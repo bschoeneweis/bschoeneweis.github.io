@@ -1,9 +1,9 @@
-import Date from './Date'
+import Date from './Date';
 
-import styles from '../styles/author.module.css'
-import utilStyles from '../styles/utils.module.css'
+import styles from '../styles/author.module.css';
+import utilStyles from '../styles/utils.module.css';
 
-export default function Author({date}) {
+const Author = ({ date }) => {
   return (
     <div className={styles.Author}>
       <img
@@ -22,3 +22,5 @@ export default function Author({date}) {
     </div>
   )
 };
+
+export default Author;

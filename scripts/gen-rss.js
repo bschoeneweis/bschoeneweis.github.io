@@ -1,23 +1,25 @@
-const { promises: fs } = require('fs')
-const path = require('path')
-const RSS = require('rss')
-const matter = require('gray-matter')
+const { promises: fs } = require('fs');
+const path = require('path');
+const RSS = require('rss');
+const matter = require('gray-matter');
 
-async function generate() {
+const generate = async () => {
   const feed = new RSS({
     title: 'Bradley Schoeneweis',
     site_url: 'https://bradleyschoeneweis.com',
-    feed_url: 'https://bradleyschoeneweis.com/feed.xml'
+    feed_url: 'https://bradleyschoeneweis.com/feed.xml',
   });
 
   const posts = await fs.readdir(path.join(__dirname, '..', 'posts'));
 
   await Promise.all(
     posts.map(async (name) => {
-      if (name.startsWith('index.')) return;
+      if (name.startsWith('index.')) {
+        return;
+      }
 
       const content = await fs.readFile(
-        path.join(__dirname, '..', 'posts', name)
+        path.join(__dirname, '..', 'posts', name),
       );
       const frontmatter = matter(content);
 
@@ -35,4 +37,4 @@ async function generate() {
   await fs.writeFile('./public/feed.xml', feed.xml({ indent: true }));
 }
 
-generate()
+generate();
