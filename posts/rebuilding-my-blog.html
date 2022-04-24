@@ -1,0 +1,531 @@
+<!DOCTYPE html><html><head><script async="" src="https://www.googletagmanager.com/gtag/js?id=UA-193041393-1"></script><script>
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'UA-193041393-1', {
+              page_path: window.location.pathname,
+            });
+          </script><meta name="viewport" content="width=device-width"/><meta charSet="utf-8"/><link rel="alternate" type="application/rss+xml" title="RSS" href="/feed.xml"/><link rel="preload" href="/fonts/FiraCode-VariableFont_wght.ttf" as="font" crossorigin="anonymous"/><link rel="icon" href="data:image/svg+xml,&lt;svg xmlns=&#x27;http://www.w3.org/2000/svg&#x27; viewBox=&#x27;0 0 100 100&#x27;&gt;&lt;text y=&#x27;.9em&#x27; font-size=&#x27;90&#x27;&gt;👋&lt;/text&gt;&lt;/svg&gt;"/><meta name="description" content="Rebuilding my blog from a Gatsby.js templated site to a custom Next.js site from scratch."/><meta property="og:image" content="https://og-image.vercel.app/Rebuilding%20my%20blog%20from%20scratch%20with%20Next.js.png?theme=light&amp;md=1&amp;fontSize=50px&amp;images=https%3A%2F%2Fassets.vercel.com%2Fimage%2Fupload%2Ffront%2Fassets%2Fdesign%2Fhyper-color-logo.svg&amp;widths=350&amp;heights=350"/><meta name="robots" content="follow, index"/><meta name="og:title" content="Rebuilding my blog from scratch with Next.js"/><meta property="og:site_name" content="Rebuilding my blog from scratch with Next.js"/><meta property="og:description" content="Rebuilding my blog from a Gatsby.js templated site to a custom Next.js site from scratch."/><meta name="twitter:card" content="summary_large_image"/><meta name="twitter:site" content="@bschoeneweis"/><meta name="twitter:title" content="Bradley Schoeneweis"/><meta name="twitter:description" content="Rebuilding my blog from a Gatsby.js templated site to a custom Next.js site from scratch."/><meta name="twitter:image" content="https://og-image.vercel.app/Rebuilding%20my%20blog%20from%20scratch%20with%20Next.js.png?theme=light&amp;md=1&amp;fontSize=50px&amp;images=https%3A%2F%2Fassets.vercel.com%2Fimage%2Fupload%2Ffront%2Fassets%2Fdesign%2Fhyper-color-logo.svg&amp;widths=350&amp;heights=350"/><title>Rebuilding my blog from scratch with Next.js</title><meta name="next-head-count" content="17"/><link rel="preload" href="/_next/static/css/06dea8e0c799365a.css" as="style"/><link rel="stylesheet" href="/_next/static/css/06dea8e0c799365a.css" data-n-g=""/><link rel="preload" href="/_next/static/css/cfc8c504f36c67ff.css" as="style"/><link rel="stylesheet" href="/_next/static/css/cfc8c504f36c67ff.css" data-n-p=""/><noscript data-n-css=""></noscript><script defer="" nomodule="" src="/_next/static/chunks/polyfills-5cd94c89d3acac5f.js"></script><script src="/_next/static/chunks/webpack-9ece489354d03833.js" defer=""></script><script src="/_next/static/chunks/framework-7d488969745094b0.js" defer=""></script><script src="/_next/static/chunks/main-c3ed9a593ffd1a6c.js" defer=""></script><script src="/_next/static/chunks/pages/_app-059eeeec4cf736c4.js" defer=""></script><script src="/_next/static/chunks/4824-86805e89d9bc00a3.js" defer=""></script><script src="/_next/static/chunks/494-a7f972c4001b17a3.js" defer=""></script><script src="/_next/static/chunks/pages/posts/%5Bid%5D-1aaf27c03def84b9.js" defer=""></script><script src="/_next/static/ZVKOKyQXrwDhq026SRufC/_buildManifest.js" defer=""></script><script src="/_next/static/ZVKOKyQXrwDhq026SRufC/_ssgManifest.js" defer=""></script><script src="/_next/static/ZVKOKyQXrwDhq026SRufC/_middlewareManifest.js" defer=""></script></head><body><div id="__next" data-reactroot=""><div class="layout_ArticleContainer__QR4qB"><header><div class="layout_LayoutLinks__92rCe"><a href="/">← Back home</a></div></header><main><article><h1 class="utils_headingXl__u25Y2">Rebuilding my blog from scratch with Next.js</h1><div class="tag_TagList__IWJKV tag_TagListPost__iMXoV"><div class="utils_displayFlex__VCtvW"><a href="/tags/nextjs"><div><span class="tag_Badge__e6qwu utils_cursorPointer__oXutf">nextjs</span></div></a></div><div class="utils_displayFlex__VCtvW"><a href="/tags/react"><div><span class="tag_Badge__e6qwu utils_cursorPointer__oXutf">react</span></div></a></div><div class="utils_displayFlex__VCtvW"><a href="/tags/javascript"><div><span class="tag_Badge__e6qwu utils_cursorPointer__oXutf">javascript</span></div></a></div></div><div class="author_Author__QmrQi"><img loading="eager" src="/images/profile.jpg" height="40" width="40" alt="Bradley Schoeneweis" class="utils_borderCircle__s2nTm author_AuthorImage__6NLD6"/><div class="utils_lightText__eUzGY author_AuthorDate__HzPM6">Bradley Schoeneweis<span class="utils_dotSeparator__Ij4lk">•</span><time dateTime="2022-04-23">April 23, 2022</time></div></div><h2>Version <code style="font-family:Fira Code;border:none;font-variant-ligatures:none;background-color:rgb(246, 249, 252);padding:3px;border-radius:3px">0.1.x</code></h2>
+<p>The first iteration of my blog was built using a pre-configured <a href="https://www.gatsbyjs.com/" target="_blank">GatsbyJS</a> site template.  I chose a template (<a href="https://novela.narative.co/" target="_blank">Novela by Narative</a>) that checked all my boxes for an easy tool to start sharing my writing.</p>
+<ul>
+<li>The theme was modern and sleek</li>
+<li>Everything was mobile-friendly</li>
+<li>Lots of plug-and-play options and prebuilt components that flowed together
+<ul>
+<li>Article metadata that connects to an author bio page</li>
+<li>Reading time estimates and progress bars</li>
+<li>Easy image optimizations</li>
+<li>A config for a Google Analytics tag</li>
+</ul>
+</li>
+<li>Deployment was straightforward with GitHub pages</li>
+</ul>
+<p>But most importantly, all I had to do was add Markdown pages to a directory to get started.  At the time, I didn&#x27;t really know much about GatsbyJS, other than it being a popular static site generator, and my modern JavaScript knowledge was introductory at-best (albeit growing each and every day).  So this seemed like the perfect route forward.</p>
+<h2>The problem</h2>
+<p>As I started writing more and more posts, I began noting different features I wanted to include on my site.  These weren&#x27;t terribly complex additions, but rather simple things like adding tags to group common posts or wanting to change the styling of the inline code snippets.</p>
+<p>I soon discovered that trying to color outside the lines when using a cookiecutter template can get very complex, very quickly.</p>
+<p>I found myself digging into nested modules in my <code style="font-family:Fira Code;border:none;font-variant-ligatures:none;background-color:rgb(246, 249, 252);padding:3px;border-radius:3px">node_modules</code> folder where I would need to overload different functions and components to get what I wanted.  It was added complexity than I didn&#x27;t foresee when I signed up to use a template.  Plus, this site could eventually house more than just a blog, and the template I chose wasn&#x27;t designed to accommodate much else.</p>
+<h2>What now?</h2>
+<p>If you haven&#x27;t noticed from the timestamp on my last article, I haven&#x27;t written a post in ~9 months.  This is largely because I was interviewing for new positions and eventually joined the team at <a href="https://radar.com" target="_blank">Radar</a> as a Product Engineer!  Preparation for interviews and taking a break after accepting this new position occupied much of the time I would normally spend writing.  Plus, taking a break from coding outside of work is a good way to avoid burnout 🤷‍♂️.</p>
+<p>The reason I mention this is because one of the technologies we use at Radar is <a href="https://nextjs.org/" target="_blank">Next.js</a>.  Next.js was something I was already trying to learn in my free time, but I&#x27;ve been able to gain a good amount of experience with it since I&#x27;ve started my new role, and my modern JavaScript fundamentals and understanding have grown drastically in the past several month (expect a lot more JavaScript posts going forward).</p>
+<p>Seeing the power of Next.js and knowing I wanted my blog to be more flexible, I decided to recreate my blog from scratch using Next.js.</p>
+<hr/>
+<h2>Next.js</h2>
+<p>A quick prelude on <a href="https://nextjs.org/" target="_blank">Next.js</a> for those who have never used it.  <a href="https://vercel.com/" target="_blank">Vercel</a>, the creators of Next.js (and a company to keep 👀 on) says it best, Next.js is...</p>
+<blockquote>
+<p>&quot;The <a href="https://reactjs.org/" target="_blank">React</a> Framework for Production&quot;</p>
+</blockquote>
+<p>Next.js comes with a ton of great built-in features including:</p>
+<ul>
+<li>Static + server-side rendering</li>
+<li>Smart bundling and code-splitting, TypeScript support, Routing, Fast Refresh, CSS + Sass support all without complex configs</li>
+<li>Image optimization</li>
+<li>Intuitive code organization (because there are a million-plus ways to organize a React project)</li>
+<li>Static HTML exports (this one is important for our purposes)</li>
+<li>So much more...</li>
+</ul>
+<p><strong>It&#x27;s an awesome framework.</strong></p>
+<p>Coincidentally enough, the <a href="https://nextjs.org/learn/basics/create-nextjs-app" target="_blank">Next.js hands-on tutorial</a> walks you through setting up a blog with Next.js. Following this tutorial will set you up with a great and simplistic starter blog (but not quite ready for deployment on GitHub pages, where this blog lives at the time of writing).</p>
+<p>A few things this tutorial covers:</p>
+<ul>
+<li>Creating the Next.js app</li>
+<li>Basics like in-app navigation, styling, adding images and more</li>
+<li>Setting up metadata, blog pages, and pre-rendering</li>
+<li>Markdown ➡️ HTML</li>
+<li>Reworking your app to use dynamic routing</li>
+</ul>
+<p>The tutorial is great so I won&#x27;t cover anything that&#x27;s already covered there.  If you&#x27;re interested in using Next.js, you should definitely go through it.</p>
+<hr/>
+<h2>Beyond the basics</h2>
+<p>As mentioned, the <a href="https://nextjs.org/learn/basics/create-nextjs-app" target="_blank">Next.js tutorial</a> is a great starting point, but I wanted to get my blog to a place where it was comparable to the previous iteration, along with the new features that encouraged me to take on this project in the first place.</p>
+<p>To keep things concise, we&#x27;ll cover adding <a href="/tags" target="_blank">tags</a>, adding a custom domain from <a href="https://domains.google/" target="_blank">Google Domains</a> to GitHub pages, and adding a GitHub action to automatically build and deploy our blog on each commit.</p>
+<hr/>
+<h2>Tags</h2>
+<p>Organization within code and outside of code is always at the top of my priority list, so categorizing posts by tag was first on my blog todo list.</p>
+<h3>Adding tags to each post</h3>
+<p>First, let&#x27;s add tags to each of our posts.  We can work off of the blog data section of the <a href="https://nextjs.org/learn/basics/data-fetching/blog-data" target="_blank">Next.js tutorial</a> and add some additional YAML metadata to our markdown posts using <a href="https://github.com/jonschlinkert/gray-matter" target="_blank">gray-matter</a>.</p>
+<p>Within the current metadata, add a list of tags relevant to the post:</p>
+<pre><div class="codeblock_CodeBlock__P_tQD"><div class="sc-gsDKAQ bnYxmP"><span style="font-size:inherit;font-family:inherit;background:#282c34;color:#abb2bf;border-radius:3px;display:flex;line-height:1.4285714285714286;overflow-x:auto;white-space:pre"><code style="font-size:inherit;font-family:inherit;line-height:1.6666666666666667;padding:8px;float:left;padding-right:10px"><span class="react-syntax-highlighter-line-number">1
+</span><span class="react-syntax-highlighter-line-number">2
+</span><span class="react-syntax-highlighter-line-number">3
+</span><span class="react-syntax-highlighter-line-number">4
+</span><span class="react-syntax-highlighter-line-number">5
+</span><span class="react-syntax-highlighter-line-number">6
+</span></code><code style="font-size:inherit;font-family:inherit;line-height:1.6666666666666667;padding:8px">---
+title: &#x27;Rebuilding my blog from scratch with Next.js&#x27;
+date: &#x27;2022-04-23&#x27;
+tags: [&#x27;nextjs&#x27;, &#x27;react&#x27;, &#x27;javascript&#x27;]
+description: &#x27;Rebuilding my blog from a Gatsby.js templated site to a custom Next.js site from scratch.&#x27;
+---</code></span><button type="button" class="sc-bdvvtL dHMcRP"><svg class="icon" viewBox="0 0 384 512" width="16pt" height="16pt" fill="#abb2bf"><path d="M280 240H168c-4.4 0-8 3.6-8 8v16c0 4.4 3.6 8 8 8h112c4.4 0 8-3.6 8-8v-16c0-4.4-3.6-8-8-8zm0 96H168c-4.4 0-8 3.6-8 8v16c0 4.4 3.6 8 8 8h112c4.4 0 8-3.6 8-8v-16c0-4.4-3.6-8-8-8zM112 232c-13.3 0-24 10.7-24 24s10.7 24 24 24 24-10.7 24-24-10.7-24-24-24zm0 96c-13.3 0-24 10.7-24 24s10.7 24 24 24 24-10.7 24-24-10.7-24-24-24zM336 64h-80c0-35.3-28.7-64-64-64s-64 28.7-64 64H48C21.5 64 0 85.5 0 112v352c0 26.5 21.5 48 48 48h288c26.5 0 48-21.5 48-48V112c0-26.5-21.5-48-48-48zM192 48c8.8 0 16 7.2 16 16s-7.2 16-16 16-16-7.2-16-16 7.2-16 16-16zm144 408c0 4.4-3.6 8-8 8H56c-4.4 0-8-3.6-8-8V120c0-4.4 3.6-8 8-8h40v32c0 8.8 7.2 16 16 16h160c8.8 0 16-7.2 16-16v-32h40c4.4 0 8 3.6 8 8v336z"></path></svg></button></div></div></pre>
+<p>I won&#x27;t cover rendering of the tags below each posts in the post list, but the tags list should get picked up automatically with the <code style="font-family:Fira Code;border:none;font-variant-ligatures:none;background-color:rgb(246, 249, 252);padding:3px;border-radius:3px">getSortedPostsData()</code> function that was already written and is called by <code style="font-family:Fira Code;border:none;font-variant-ligatures:none;background-color:rgb(246, 249, 252);padding:3px;border-radius:3px">getStaticProps()</code> in order to pass props down the the post related components.</p>
+<h3>/tags/[tag]</h3>
+<p>What we&#x27;ve done so far will associate posts with a list of tags, but now we also want a page for each tag that lists out the associated posts.  For example, to view <code style="font-family:Fira Code;border:none;font-variant-ligatures:none;background-color:rgb(246, 249, 252);padding:3px;border-radius:3px">python</code> related posts, we can go to <a href="/tags/python" target="_blank">/tags/python</a>.</p>
+<p>With Next.js, this can be done easily using <a href="https://nextjs.org/docs/routing/dynamic-routes" target="_blank">dynamic routes</a>.</p>
+<p>Under the <code style="font-family:Fira Code;border:none;font-variant-ligatures:none;background-color:rgb(246, 249, 252);padding:3px;border-radius:3px">pages/</code> directory, create a <code style="font-family:Fira Code;border:none;font-variant-ligatures:none;background-color:rgb(246, 249, 252);padding:3px;border-radius:3px">pages/tags/[tag].js</code> file structure.  We&#x27;ll be repeating similar patterns done within <code style="font-family:Fira Code;border:none;font-variant-ligatures:none;background-color:rgb(246, 249, 252);padding:3px;border-radius:3px">pages/posts/[id].js</code>.</p>
+<p>Like earlier, we need to implement <code style="font-family:Fira Code;border:none;font-variant-ligatures:none;background-color:rgb(246, 249, 252);padding:3px;border-radius:3px">getStaticProps()</code> (<a href="https://nextjs.org/docs/basic-features/data-fetching/get-static-props" target="_blank">more info here</a>), so we can render these pages at build time.  We also need to implement <code style="font-family:Fira Code;border:none;font-variant-ligatures:none;background-color:rgb(246, 249, 252);padding:3px;border-radius:3px">getStaticPaths()</code> (<a href="https://nextjs.org/docs/basic-features/data-fetching/get-static-paths" target="_blank">more info here</a>) to get a list of all possible tags at build time.</p>
+<p>Let&#x27;s create a <code style="font-family:Fira Code;border:none;font-variant-ligatures:none;background-color:rgb(246, 249, 252);padding:3px;border-radius:3px">lib/tags.js</code> file to house some of the helper functions to implement <code style="font-family:Fira Code;border:none;font-variant-ligatures:none;background-color:rgb(246, 249, 252);padding:3px;border-radius:3px">getStaticProps()</code> and <code style="font-family:Fira Code;border:none;font-variant-ligatures:none;background-color:rgb(246, 249, 252);padding:3px;border-radius:3px">getStaticPaths()</code>.</p>
+<p>First, we want to get a list of all the tags so we can write <code style="font-family:Fira Code;border:none;font-variant-ligatures:none;background-color:rgb(246, 249, 252);padding:3px;border-radius:3px">getStaticPaths()</code>.  This will require processing all of the files within <code style="font-family:Fira Code;border:none;font-variant-ligatures:none;background-color:rgb(246, 249, 252);padding:3px;border-radius:3px">posts/</code>, and processing the metadata using <a href="https://github.com/jonschlinkert/gray-matter" target="_blank">gray-matter</a>.</p>
+<pre><div class="codeblock_CodeBlock__P_tQD"><div class="sc-gsDKAQ bnYxmP"><span style="font-size:inherit;font-family:inherit;background:#282c34;color:#abb2bf;border-radius:3px;display:flex;line-height:1.4285714285714286;overflow-x:auto;white-space:pre"><code style="font-size:inherit;font-family:inherit;line-height:1.6666666666666667;padding:8px;float:left;padding-right:10px"><span class="react-syntax-highlighter-line-number">1
+</span><span class="react-syntax-highlighter-line-number">2
+</span><span class="react-syntax-highlighter-line-number">3
+</span><span class="react-syntax-highlighter-line-number">4
+</span><span class="react-syntax-highlighter-line-number">5
+</span><span class="react-syntax-highlighter-line-number">6
+</span><span class="react-syntax-highlighter-line-number">7
+</span><span class="react-syntax-highlighter-line-number">8
+</span><span class="react-syntax-highlighter-line-number">9
+</span><span class="react-syntax-highlighter-line-number">10
+</span><span class="react-syntax-highlighter-line-number">11
+</span><span class="react-syntax-highlighter-line-number">12
+</span><span class="react-syntax-highlighter-line-number">13
+</span><span class="react-syntax-highlighter-line-number">14
+</span><span class="react-syntax-highlighter-line-number">15
+</span><span class="react-syntax-highlighter-line-number">16
+</span><span class="react-syntax-highlighter-line-number">17
+</span><span class="react-syntax-highlighter-line-number">18
+</span><span class="react-syntax-highlighter-line-number">19
+</span><span class="react-syntax-highlighter-line-number">20
+</span><span class="react-syntax-highlighter-line-number">21
+</span><span class="react-syntax-highlighter-line-number">22
+</span><span class="react-syntax-highlighter-line-number">23
+</span><span class="react-syntax-highlighter-line-number">24
+</span><span class="react-syntax-highlighter-line-number">25
+</span><span class="react-syntax-highlighter-line-number">26
+</span></code><code style="font-size:inherit;font-family:inherit;line-height:1.6666666666666667;padding:8px">import fs from &#x27;fs&#x27;;
+import path from &#x27;path&#x27;;
+import matter from &#x27;gray-matter&#x27;;
+
+const postsDirectory = path.join(process.cwd(), &#x27;posts&#x27;);
+
+export async function getAllTags() {
+  const fileNames = fs.readdirSync(postsDirectory);
+  const tags = new Set();
+
+  fileNames.map(fileName =&gt; {
+    // Read markdown file as string
+    const fullPath = path.join(postsDirectory, fileName);
+    const fileContents = fs.readFileSync(fullPath, &#x27;utf8&#x27;);
+
+    // Use gray-matter to parse the post metadata section
+    const matterResult = matter(fileContents);
+    if (matterResult?.data?.tags) {
+      matterResult.data.tags.forEach(
+        (tag) =&gt; tags.add(`/tags/${tag.replace(/\s+/g, &#x27;-&#x27;).toLowerCase()}`)
+      );
+    }
+  });
+
+  return Array.from(tags);
+}</code></span><button type="button" class="sc-bdvvtL dHMcRP"><svg class="icon" viewBox="0 0 384 512" width="16pt" height="16pt" fill="#abb2bf"><path d="M280 240H168c-4.4 0-8 3.6-8 8v16c0 4.4 3.6 8 8 8h112c4.4 0 8-3.6 8-8v-16c0-4.4-3.6-8-8-8zm0 96H168c-4.4 0-8 3.6-8 8v16c0 4.4 3.6 8 8 8h112c4.4 0 8-3.6 8-8v-16c0-4.4-3.6-8-8-8zM112 232c-13.3 0-24 10.7-24 24s10.7 24 24 24 24-10.7 24-24-10.7-24-24-24zm0 96c-13.3 0-24 10.7-24 24s10.7 24 24 24 24-10.7 24-24-10.7-24-24-24zM336 64h-80c0-35.3-28.7-64-64-64s-64 28.7-64 64H48C21.5 64 0 85.5 0 112v352c0 26.5 21.5 48 48 48h288c26.5 0 48-21.5 48-48V112c0-26.5-21.5-48-48-48zM192 48c8.8 0 16 7.2 16 16s-7.2 16-16 16-16-7.2-16-16 7.2-16 16-16zm144 408c0 4.4-3.6 8-8 8H56c-4.4 0-8-3.6-8-8V120c0-4.4 3.6-8 8-8h40v32c0 8.8 7.2 16 16 16h160c8.8 0 16-7.2 16-16v-32h40c4.4 0 8 3.6 8 8v336z"></path></svg></button></div></div></pre>
+<p>Now we can call this within <code style="font-family:Fira Code;border:none;font-variant-ligatures:none;background-color:rgb(246, 249, 252);padding:3px;border-radius:3px">pages/tags/[tag].js</code> under <code style="font-family:Fira Code;border:none;font-variant-ligatures:none;background-color:rgb(246, 249, 252);padding:3px;border-radius:3px">getStaticPaths()</code></p>
+<pre><div class="codeblock_CodeBlock__P_tQD"><div class="sc-gsDKAQ bnYxmP"><span style="font-size:inherit;font-family:inherit;background:#282c34;color:#abb2bf;border-radius:3px;display:flex;line-height:1.4285714285714286;overflow-x:auto;white-space:pre"><code style="font-size:inherit;font-family:inherit;line-height:1.6666666666666667;padding:8px;float:left;padding-right:10px"><span class="react-syntax-highlighter-line-number">1
+</span><span class="react-syntax-highlighter-line-number">2
+</span><span class="react-syntax-highlighter-line-number">3
+</span><span class="react-syntax-highlighter-line-number">4
+</span><span class="react-syntax-highlighter-line-number">5
+</span><span class="react-syntax-highlighter-line-number">6
+</span><span class="react-syntax-highlighter-line-number">7
+</span></code><code style="font-size:inherit;font-family:inherit;line-height:1.6666666666666667;padding:8px">export async function getStaticPaths() {
+  const paths = await getAllTags();
+  return {
+    paths,
+    fallback: false,
+  }
+}</code></span><button type="button" class="sc-bdvvtL dHMcRP"><svg class="icon" viewBox="0 0 384 512" width="16pt" height="16pt" fill="#abb2bf"><path d="M280 240H168c-4.4 0-8 3.6-8 8v16c0 4.4 3.6 8 8 8h112c4.4 0 8-3.6 8-8v-16c0-4.4-3.6-8-8-8zm0 96H168c-4.4 0-8 3.6-8 8v16c0 4.4 3.6 8 8 8h112c4.4 0 8-3.6 8-8v-16c0-4.4-3.6-8-8-8zM112 232c-13.3 0-24 10.7-24 24s10.7 24 24 24 24-10.7 24-24-10.7-24-24-24zm0 96c-13.3 0-24 10.7-24 24s10.7 24 24 24 24-10.7 24-24-10.7-24-24-24zM336 64h-80c0-35.3-28.7-64-64-64s-64 28.7-64 64H48C21.5 64 0 85.5 0 112v352c0 26.5 21.5 48 48 48h288c26.5 0 48-21.5 48-48V112c0-26.5-21.5-48-48-48zM192 48c8.8 0 16 7.2 16 16s-7.2 16-16 16-16-7.2-16-16 7.2-16 16-16zm144 408c0 4.4-3.6 8-8 8H56c-4.4 0-8-3.6-8-8V120c0-4.4 3.6-8 8-8h40v32c0 8.8 7.2 16 16 16h160c8.8 0 16-7.2 16-16v-32h40c4.4 0 8 3.6 8 8v336z"></path></svg></button></div></div></pre>
+<p>Now, we can add another helper function <code style="font-family:Fira Code;border:none;font-variant-ligatures:none;background-color:rgb(246, 249, 252);padding:3px;border-radius:3px">getPostDataByTag()</code> in <code style="font-family:Fira Code;border:none;font-variant-ligatures:none;background-color:rgb(246, 249, 252);padding:3px;border-radius:3px">lib/tags.js</code> to fulfill <code style="font-family:Fira Code;border:none;font-variant-ligatures:none;background-color:rgb(246, 249, 252);padding:3px;border-radius:3px">getStaticProps()</code>.  This is basically what we already do with <code style="font-family:Fira Code;border:none;font-variant-ligatures:none;background-color:rgb(246, 249, 252);padding:3px;border-radius:3px">pages/posts/[id].js</code>, and it&#x27;s not very efficient to do this twice, but all of this is happening at build time so it&#x27;s not a huge deal for us.</p>
+<p>For this, we will use <a href="https://github.com/remarkjs/remark" target="_blank">remark</a> to process our markdown files.</p>
+<pre><div class="codeblock_CodeBlock__P_tQD"><div class="sc-gsDKAQ bnYxmP"><span style="font-size:inherit;font-family:inherit;background:#282c34;color:#abb2bf;border-radius:3px;display:flex;line-height:1.4285714285714286;overflow-x:auto;white-space:pre"><code style="font-size:inherit;font-family:inherit;line-height:1.6666666666666667;padding:8px;float:left;padding-right:10px"><span class="react-syntax-highlighter-line-number">1
+</span><span class="react-syntax-highlighter-line-number">2
+</span><span class="react-syntax-highlighter-line-number">3
+</span><span class="react-syntax-highlighter-line-number">4
+</span><span class="react-syntax-highlighter-line-number">5
+</span><span class="react-syntax-highlighter-line-number">6
+</span><span class="react-syntax-highlighter-line-number">7
+</span><span class="react-syntax-highlighter-line-number">8
+</span><span class="react-syntax-highlighter-line-number">9
+</span><span class="react-syntax-highlighter-line-number">10
+</span><span class="react-syntax-highlighter-line-number">11
+</span><span class="react-syntax-highlighter-line-number">12
+</span><span class="react-syntax-highlighter-line-number">13
+</span><span class="react-syntax-highlighter-line-number">14
+</span><span class="react-syntax-highlighter-line-number">15
+</span><span class="react-syntax-highlighter-line-number">16
+</span><span class="react-syntax-highlighter-line-number">17
+</span><span class="react-syntax-highlighter-line-number">18
+</span><span class="react-syntax-highlighter-line-number">19
+</span><span class="react-syntax-highlighter-line-number">20
+</span><span class="react-syntax-highlighter-line-number">21
+</span><span class="react-syntax-highlighter-line-number">22
+</span><span class="react-syntax-highlighter-line-number">23
+</span><span class="react-syntax-highlighter-line-number">24
+</span><span class="react-syntax-highlighter-line-number">25
+</span><span class="react-syntax-highlighter-line-number">26
+</span><span class="react-syntax-highlighter-line-number">27
+</span><span class="react-syntax-highlighter-line-number">28
+</span><span class="react-syntax-highlighter-line-number">29
+</span><span class="react-syntax-highlighter-line-number">30
+</span><span class="react-syntax-highlighter-line-number">31
+</span><span class="react-syntax-highlighter-line-number">32
+</span><span class="react-syntax-highlighter-line-number">33
+</span><span class="react-syntax-highlighter-line-number">34
+</span><span class="react-syntax-highlighter-line-number">35
+</span><span class="react-syntax-highlighter-line-number">36
+</span><span class="react-syntax-highlighter-line-number">37
+</span><span class="react-syntax-highlighter-line-number">38
+</span><span class="react-syntax-highlighter-line-number">39
+</span><span class="react-syntax-highlighter-line-number">40
+</span><span class="react-syntax-highlighter-line-number">41
+</span></code><code style="font-size:inherit;font-family:inherit;line-height:1.6666666666666667;padding:8px">import fs from &#x27;fs&#x27;;
+import path from &#x27;path&#x27;;
+import matter from &#x27;gray-matter&#x27;;
+import { remark } from &#x27;remark&#x27;;
+import html from &#x27;remark-html&#x27;;
+
+const postsDirectory = path.join(process.cwd(), &#x27;posts&#x27;);
+
+export async function getPostDataByTag(tag) {
+  const fileNames = fs.readdirSync(postsDirectory);
+  const posts = [];
+
+  fileNames.map(async (fileName) =&gt; {
+    const id = fileName.replace(/\.md$/, &#x27;&#x27;);
+  
+    // Read markdown file as string
+    const fullPath = path.join(postsDirectory, fileName);
+    const fileContents = fs.readFileSync(fullPath, &#x27;utf8&#x27;);
+
+    // Use gray-matter to parse the post metadata section
+    const matterResult = matter(fileContents);
+
+    if (matterResult?.data?.tags &amp;&amp; matterResult.data.tags.includes(tag)) {
+      // Use remark to convert markdown into HTML string
+      const processedContent = await remark()
+        .use(html)
+        .process(matterResult.content);
+      const contentHtml = processedContent.toString();
+
+      // Combine the data with the id and contentHtml
+      posts.push({
+        id,
+        contentHtml,
+        markdown: matterResult.content,
+        ...matterResult.data,
+      });
+    }
+  });
+
+  return posts;
+}</code></span><button type="button" class="sc-bdvvtL dHMcRP"><svg class="icon" viewBox="0 0 384 512" width="16pt" height="16pt" fill="#abb2bf"><path d="M280 240H168c-4.4 0-8 3.6-8 8v16c0 4.4 3.6 8 8 8h112c4.4 0 8-3.6 8-8v-16c0-4.4-3.6-8-8-8zm0 96H168c-4.4 0-8 3.6-8 8v16c0 4.4 3.6 8 8 8h112c4.4 0 8-3.6 8-8v-16c0-4.4-3.6-8-8-8zM112 232c-13.3 0-24 10.7-24 24s10.7 24 24 24 24-10.7 24-24-10.7-24-24-24zm0 96c-13.3 0-24 10.7-24 24s10.7 24 24 24 24-10.7 24-24-10.7-24-24-24zM336 64h-80c0-35.3-28.7-64-64-64s-64 28.7-64 64H48C21.5 64 0 85.5 0 112v352c0 26.5 21.5 48 48 48h288c26.5 0 48-21.5 48-48V112c0-26.5-21.5-48-48-48zM192 48c8.8 0 16 7.2 16 16s-7.2 16-16 16-16-7.2-16-16 7.2-16 16-16zm144 408c0 4.4-3.6 8-8 8H56c-4.4 0-8-3.6-8-8V120c0-4.4 3.6-8 8-8h40v32c0 8.8 7.2 16 16 16h160c8.8 0 16-7.2 16-16v-32h40c4.4 0 8 3.6 8 8v336z"></path></svg></button></div></div></pre>
+<p>We can call this helper function in <code style="font-family:Fira Code;border:none;font-variant-ligatures:none;background-color:rgb(246, 249, 252);padding:3px;border-radius:3px">pages/tags/[tag].js</code> under <code style="font-family:Fira Code;border:none;font-variant-ligatures:none;background-color:rgb(246, 249, 252);padding:3px;border-radius:3px">getStaticProps()</code></p>
+<pre><div class="codeblock_CodeBlock__P_tQD"><div class="sc-gsDKAQ bnYxmP"><span style="font-size:inherit;font-family:inherit;background:#282c34;color:#abb2bf;border-radius:3px;display:flex;line-height:1.4285714285714286;overflow-x:auto;white-space:pre"><code style="font-size:inherit;font-family:inherit;line-height:1.6666666666666667;padding:8px;float:left;padding-right:10px"><span class="react-syntax-highlighter-line-number">1
+</span><span class="react-syntax-highlighter-line-number">2
+</span><span class="react-syntax-highlighter-line-number">3
+</span><span class="react-syntax-highlighter-line-number">4
+</span><span class="react-syntax-highlighter-line-number">5
+</span><span class="react-syntax-highlighter-line-number">6
+</span><span class="react-syntax-highlighter-line-number">7
+</span><span class="react-syntax-highlighter-line-number">8
+</span><span class="react-syntax-highlighter-line-number">9
+</span><span class="react-syntax-highlighter-line-number">10
+</span></code><code style="font-size:inherit;font-family:inherit;line-height:1.6666666666666667;padding:8px">export async function getStaticProps({ params }) {
+  const { tag } = params;
+  const taggedPosts = await getPostDataByTag(tag);
+  return {
+    props: {
+      tag,
+      taggedPosts,
+    },
+  };
+}</code></span><button type="button" class="sc-bdvvtL dHMcRP"><svg class="icon" viewBox="0 0 384 512" width="16pt" height="16pt" fill="#abb2bf"><path d="M280 240H168c-4.4 0-8 3.6-8 8v16c0 4.4 3.6 8 8 8h112c4.4 0 8-3.6 8-8v-16c0-4.4-3.6-8-8-8zm0 96H168c-4.4 0-8 3.6-8 8v16c0 4.4 3.6 8 8 8h112c4.4 0 8-3.6 8-8v-16c0-4.4-3.6-8-8-8zM112 232c-13.3 0-24 10.7-24 24s10.7 24 24 24 24-10.7 24-24-10.7-24-24-24zm0 96c-13.3 0-24 10.7-24 24s10.7 24 24 24 24-10.7 24-24-10.7-24-24-24zM336 64h-80c0-35.3-28.7-64-64-64s-64 28.7-64 64H48C21.5 64 0 85.5 0 112v352c0 26.5 21.5 48 48 48h288c26.5 0 48-21.5 48-48V112c0-26.5-21.5-48-48-48zM192 48c8.8 0 16 7.2 16 16s-7.2 16-16 16-16-7.2-16-16 7.2-16 16-16zm144 408c0 4.4-3.6 8-8 8H56c-4.4 0-8-3.6-8-8V120c0-4.4 3.6-8 8-8h40v32c0 8.8 7.2 16 16 16h160c8.8 0 16-7.2 16-16v-32h40c4.4 0 8 3.6 8 8v336z"></path></svg></button></div></div></pre>
+<p>Now, you can render the associated tag pages as you wish, but I did it with a few components I had set up:</p>
+<pre><div class="codeblock_CodeBlock__P_tQD"><div class="sc-gsDKAQ bnYxmP"><span style="font-size:inherit;font-family:inherit;background:#282c34;color:#abb2bf;border-radius:3px;display:flex;line-height:1.4285714285714286;overflow-x:auto;white-space:pre"><code style="font-size:inherit;font-family:inherit;line-height:1.6666666666666667;padding:8px;float:left;padding-right:10px"><span class="react-syntax-highlighter-line-number">1
+</span><span class="react-syntax-highlighter-line-number">2
+</span><span class="react-syntax-highlighter-line-number">3
+</span><span class="react-syntax-highlighter-line-number">4
+</span><span class="react-syntax-highlighter-line-number">5
+</span><span class="react-syntax-highlighter-line-number">6
+</span><span class="react-syntax-highlighter-line-number">7
+</span><span class="react-syntax-highlighter-line-number">8
+</span><span class="react-syntax-highlighter-line-number">9
+</span><span class="react-syntax-highlighter-line-number">10
+</span><span class="react-syntax-highlighter-line-number">11
+</span><span class="react-syntax-highlighter-line-number">12
+</span><span class="react-syntax-highlighter-line-number">13
+</span><span class="react-syntax-highlighter-line-number">14
+</span></code><code style="font-size:inherit;font-family:inherit;line-height:1.6666666666666667;padding:8px">export default function TagPage({ tag, taggedPosts }) {
+  const title = `Posts tagged &quot;${tag}&quot;`;
+  return (
+    &lt;Layout tagPage title={title} description={title}&gt; 
+      &lt;header&gt;
+        &lt;Tag tag={tag} isHeader/&gt;
+      &lt;/header&gt;
+
+      &lt;section&gt;
+        &lt;PostList posts={taggedPosts} /&gt;
+      &lt;/section&gt;
+    &lt;/Layout&gt;
+  );
+}</code></span><button type="button" class="sc-bdvvtL dHMcRP"><svg class="icon" viewBox="0 0 384 512" width="16pt" height="16pt" fill="#abb2bf"><path d="M280 240H168c-4.4 0-8 3.6-8 8v16c0 4.4 3.6 8 8 8h112c4.4 0 8-3.6 8-8v-16c0-4.4-3.6-8-8-8zm0 96H168c-4.4 0-8 3.6-8 8v16c0 4.4 3.6 8 8 8h112c4.4 0 8-3.6 8-8v-16c0-4.4-3.6-8-8-8zM112 232c-13.3 0-24 10.7-24 24s10.7 24 24 24 24-10.7 24-24-10.7-24-24-24zm0 96c-13.3 0-24 10.7-24 24s10.7 24 24 24 24-10.7 24-24-10.7-24-24-24zM336 64h-80c0-35.3-28.7-64-64-64s-64 28.7-64 64H48C21.5 64 0 85.5 0 112v352c0 26.5 21.5 48 48 48h288c26.5 0 48-21.5 48-48V112c0-26.5-21.5-48-48-48zM192 48c8.8 0 16 7.2 16 16s-7.2 16-16 16-16-7.2-16-16 7.2-16 16-16zm144 408c0 4.4-3.6 8-8 8H56c-4.4 0-8-3.6-8-8V120c0-4.4 3.6-8 8-8h40v32c0 8.8 7.2 16 16 16h160c8.8 0 16-7.2 16-16v-32h40c4.4 0 8 3.6 8 8v336z"></path></svg></button></div></div></pre>
+<h3>All tags</h3>
+<p>The last thing we want to add is a page containing all of the tags in a list, and all of the posts organized into categories.</p>
+<p>To do this, we can add <code style="font-family:Fira Code;border:none;font-variant-ligatures:none;background-color:rgb(246, 249, 252);padding:3px;border-radius:3px">pages/tags.js</code>, which can be reached at <a href="/tags" target="_blank">/tags</a>.</p>
+<p>Once again, we want to implement <code style="font-family:Fira Code;border:none;font-variant-ligatures:none;background-color:rgb(246, 249, 252);padding:3px;border-radius:3px">getStaticProps()</code> so we can pre-render this page at build time.  Luckily, we can reuse the two functions we wrote in <code style="font-family:Fira Code;border:none;font-variant-ligatures:none;background-color:rgb(246, 249, 252);padding:3px;border-radius:3px">lib/tags.js</code> to make this easy.</p>
+<pre><div class="codeblock_CodeBlock__P_tQD"><div class="sc-gsDKAQ bnYxmP"><span style="font-size:inherit;font-family:inherit;background:#282c34;color:#abb2bf;border-radius:3px;display:flex;line-height:1.4285714285714286;overflow-x:auto;white-space:pre"><code style="font-size:inherit;font-family:inherit;line-height:1.6666666666666667;padding:8px;float:left;padding-right:10px"><span class="react-syntax-highlighter-line-number">1
+</span><span class="react-syntax-highlighter-line-number">2
+</span><span class="react-syntax-highlighter-line-number">3
+</span><span class="react-syntax-highlighter-line-number">4
+</span><span class="react-syntax-highlighter-line-number">5
+</span><span class="react-syntax-highlighter-line-number">6
+</span><span class="react-syntax-highlighter-line-number">7
+</span><span class="react-syntax-highlighter-line-number">8
+</span><span class="react-syntax-highlighter-line-number">9
+</span><span class="react-syntax-highlighter-line-number">10
+</span><span class="react-syntax-highlighter-line-number">11
+</span><span class="react-syntax-highlighter-line-number">12
+</span><span class="react-syntax-highlighter-line-number">13
+</span><span class="react-syntax-highlighter-line-number">14
+</span><span class="react-syntax-highlighter-line-number">15
+</span><span class="react-syntax-highlighter-line-number">16
+</span><span class="react-syntax-highlighter-line-number">17
+</span></code><code style="font-size:inherit;font-family:inherit;line-height:1.6666666666666667;padding:8px">import { getAllTags, getPostDataByTag } from &#x27;../lib/tags&#x27;
+
+export async function getStaticProps() {
+  const tagsWithPosts = {};
+  const allTags = await getAllTags();
+
+  for (const tagPath of allTags) {
+    const tag = tagPath.replace(&#x27;/tags/&#x27;, &#x27;&#x27;);
+    tagsWithPosts[tag] = await getPostDataByTag(tag);
+  }
+
+  return {
+    props: {
+      tagsWithPosts,
+    },
+  };
+}</code></span><button type="button" class="sc-bdvvtL dHMcRP"><svg class="icon" viewBox="0 0 384 512" width="16pt" height="16pt" fill="#abb2bf"><path d="M280 240H168c-4.4 0-8 3.6-8 8v16c0 4.4 3.6 8 8 8h112c4.4 0 8-3.6 8-8v-16c0-4.4-3.6-8-8-8zm0 96H168c-4.4 0-8 3.6-8 8v16c0 4.4 3.6 8 8 8h112c4.4 0 8-3.6 8-8v-16c0-4.4-3.6-8-8-8zM112 232c-13.3 0-24 10.7-24 24s10.7 24 24 24 24-10.7 24-24-10.7-24-24-24zm0 96c-13.3 0-24 10.7-24 24s10.7 24 24 24 24-10.7 24-24-10.7-24-24-24zM336 64h-80c0-35.3-28.7-64-64-64s-64 28.7-64 64H48C21.5 64 0 85.5 0 112v352c0 26.5 21.5 48 48 48h288c26.5 0 48-21.5 48-48V112c0-26.5-21.5-48-48-48zM192 48c8.8 0 16 7.2 16 16s-7.2 16-16 16-16-7.2-16-16 7.2-16 16-16zm144 408c0 4.4-3.6 8-8 8H56c-4.4 0-8-3.6-8-8V120c0-4.4 3.6-8 8-8h40v32c0 8.8 7.2 16 16 16h160c8.8 0 16-7.2 16-16v-32h40c4.4 0 8 3.6 8 8v336z"></path></svg></button></div></div></pre>
+<p>Now, you can render this as you&#x27;d like using <code style="font-family:Fira Code;border:none;font-variant-ligatures:none;background-color:rgb(246, 249, 252);padding:3px;border-radius:3px">tagsWithPosts</code> as a prop in your page component.  I also like having a toggle to show/hide the associated posts.</p>
+<pre><div class="codeblock_CodeBlock__P_tQD"><div class="sc-gsDKAQ bnYxmP"><span style="font-size:inherit;font-family:inherit;background:#282c34;color:#abb2bf;border-radius:3px;display:flex;line-height:1.4285714285714286;overflow-x:auto;white-space:pre"><code style="font-size:inherit;font-family:inherit;line-height:1.6666666666666667;padding:8px;float:left;padding-right:10px"><span class="react-syntax-highlighter-line-number">1
+</span><span class="react-syntax-highlighter-line-number">2
+</span><span class="react-syntax-highlighter-line-number">3
+</span><span class="react-syntax-highlighter-line-number">4
+</span><span class="react-syntax-highlighter-line-number">5
+</span><span class="react-syntax-highlighter-line-number">6
+</span><span class="react-syntax-highlighter-line-number">7
+</span><span class="react-syntax-highlighter-line-number">8
+</span><span class="react-syntax-highlighter-line-number">9
+</span><span class="react-syntax-highlighter-line-number">10
+</span><span class="react-syntax-highlighter-line-number">11
+</span><span class="react-syntax-highlighter-line-number">12
+</span><span class="react-syntax-highlighter-line-number">13
+</span><span class="react-syntax-highlighter-line-number">14
+</span><span class="react-syntax-highlighter-line-number">15
+</span><span class="react-syntax-highlighter-line-number">16
+</span><span class="react-syntax-highlighter-line-number">17
+</span><span class="react-syntax-highlighter-line-number">18
+</span><span class="react-syntax-highlighter-line-number">19
+</span><span class="react-syntax-highlighter-line-number">20
+</span><span class="react-syntax-highlighter-line-number">21
+</span><span class="react-syntax-highlighter-line-number">22
+</span><span class="react-syntax-highlighter-line-number">23
+</span><span class="react-syntax-highlighter-line-number">24
+</span><span class="react-syntax-highlighter-line-number">25
+</span><span class="react-syntax-highlighter-line-number">26
+</span><span class="react-syntax-highlighter-line-number">27
+</span></code><code style="font-size:inherit;font-family:inherit;line-height:1.6666666666666667;padding:8px">export default function TagPage({ tagsWithPosts }) {
+  const [showPosts, setShowPosts] = useState(false);
+
+  const tagAndPostList = Object.keys(tagsWithPosts).map((tag) =&gt; {
+    return (
+      &lt;section key={tag}&gt;
+        &lt;Tag tag={tag} isHeader useLink label={tagsWithPosts[tag].length} /&gt;
+        {showPosts &amp;&amp; &lt;PostList posts={tagsWithPosts[tag]} withPadding /&gt; }
+      &lt;/section&gt;
+    );
+  });
+
+  const title = &#x27;All Tags&#x27;;
+  return (
+    &lt;Layout title={title} description={title}&gt;
+      &lt;header&gt;
+        &lt;h1&gt;All tags&lt;/h1&gt;
+        &lt;div&gt;
+          &lt;Checkbox label={&#x27;Show posts&#x27;} value={showPosts} onChange={(x) =&gt; setShowPosts(!showPosts)} /&gt;
+        &lt;/div&gt;
+      &lt;/header&gt;
+
+      {tagAndPostList}
+
+    &lt;/Layout&gt;
+  );
+}</code></span><button type="button" class="sc-bdvvtL dHMcRP"><svg class="icon" viewBox="0 0 384 512" width="16pt" height="16pt" fill="#abb2bf"><path d="M280 240H168c-4.4 0-8 3.6-8 8v16c0 4.4 3.6 8 8 8h112c4.4 0 8-3.6 8-8v-16c0-4.4-3.6-8-8-8zm0 96H168c-4.4 0-8 3.6-8 8v16c0 4.4 3.6 8 8 8h112c4.4 0 8-3.6 8-8v-16c0-4.4-3.6-8-8-8zM112 232c-13.3 0-24 10.7-24 24s10.7 24 24 24 24-10.7 24-24-10.7-24-24-24zm0 96c-13.3 0-24 10.7-24 24s10.7 24 24 24 24-10.7 24-24-10.7-24-24-24zM336 64h-80c0-35.3-28.7-64-64-64s-64 28.7-64 64H48C21.5 64 0 85.5 0 112v352c0 26.5 21.5 48 48 48h288c26.5 0 48-21.5 48-48V112c0-26.5-21.5-48-48-48zM192 48c8.8 0 16 7.2 16 16s-7.2 16-16 16-16-7.2-16-16 7.2-16 16-16zm144 408c0 4.4-3.6 8-8 8H56c-4.4 0-8-3.6-8-8V120c0-4.4 3.6-8 8-8h40v32c0 8.8 7.2 16 16 16h160c8.8 0 16-7.2 16-16v-32h40c4.4 0 8 3.6 8 8v336z"></path></svg></button></div></div></pre>
+<p>Now we have a page with all of our tags 🙌.</p>
+<hr/>
+<h2>Adding a custom domain</h2>
+<p>Next on my todo list was adding a custom domain to transition from bschoeneweis.github.io ➡️ bradleyschoeneweis.com.  GitHub gives a good overview of the steps <a href="https://docs.github.com/en/pages/configuring-a-custom-domain-for-your-github-pages-site/managing-a-custom-domain-for-your-github-pages-site#configuring-an-apex-domain" target="_blank">here</a>, but we&#x27;ll go through it below specifically using <a href="https://domains.google/" target="_blank">Google domains</a>.</p>
+<p>We&#x27;ll be using an apex domain (e.g. bradleyschoeneweis.com).</p>
+<h3>GitHub changes</h3>
+<ol>
+<li>Go to the repository settings for your GitHub pages repository</li>
+<li>Click into the <strong>Pages</strong> section</li>
+<li>Type your apex domain into the <strong>Custom domain</strong> input and click <strong>Save</strong></li>
+</ol>
+<h3>Google domains changes</h3>
+<ol>
+<li>Go to your <a href="https://domains.google.com/registrar/" target="_blank">Google domains registrar</a></li>
+<li>Click <strong>Manage</strong> on the domain you&#x27;d like to use</li>
+<li>Navigate to the <strong>DNS</strong> settings and under <strong>Resource records</strong>, click <strong>Manage custom records</strong></li>
+<li>Refer to the <a href="https://docs.github.com/en/pages/configuring-a-custom-domain-for-your-github-pages-site/managing-a-custom-domain-for-your-github-pages-site#configuring-an-apex-domain" target="_blank">GitHub documentation</a> for the official IP address list, but add the following <code style="font-family:Fira Code;border:none;font-variant-ligatures:none;background-color:rgb(246, 249, 252);padding:3px;border-radius:3px">A</code> and <code style="font-family:Fira Code;border:none;font-variant-ligatures:none;background-color:rgb(246, 249, 252);padding:3px;border-radius:3px">CNAME</code> records</li>
+</ol>
+<div style="display:flex;justify-content:center" class="ZoomImageWrapper"><label><input type="checkbox" class="utils_displayNone__rveqn"/><img src="/images/rebuilding-my-blog/dns-records.jpg" width="768" height="432" class="postImg" alt="DNS records" loading="lazy"/></label></div>
+<h3>Final steps and confirmation</h3>
+<ol>
+<li>Head back to the <strong>Pages</strong> settings for your repository and check <strong>Enforce HTTPS</strong></li>
+<li>After a bit of time has passed, run <code style="font-family:Fira Code;border:none;font-variant-ligatures:none;background-color:rgb(246, 249, 252);padding:3px;border-radius:3px">dig www.mynewdomain.com +nostats +nocomments +nocmd</code> replace with your domain name and your output should look similar to the following:</li>
+</ol>
+<div style="display:flex;justify-content:center" class="ZoomImageWrapper"><label><input type="checkbox" class="utils_displayNone__rveqn"/><img src="/images/rebuilding-my-blog/dig-output.jpg" width="768" height="432" class="postImg" alt="dig output" loading="lazy"/></label></div>
+<p>Now your custom domain should be all set up with your GitHub pages blog! 🎉</p>
+<hr/>
+<h2>Simple automated deployment</h2>
+<p>For the final touches, I didn&#x27;t want to have to worry about building the blog locally each time, so we&#x27;ll create a simple GitHub action to build and serve our blog on each commit.</p>
+<h3>The <code style="font-family:Fira Code;border:none;font-variant-ligatures:none;background-color:rgb(246, 249, 252);padding:3px;border-radius:3px">package.json</code> scripts</h3>
+<p>If you don&#x27;t have one already, you should create a <code style="font-family:Fira Code;border:none;font-variant-ligatures:none;background-color:rgb(246, 249, 252);padding:3px;border-radius:3px">build</code> script in <code style="font-family:Fira Code;border:none;font-variant-ligatures:none;background-color:rgb(246, 249, 252);padding:3px;border-radius:3px">package.json</code> as <code style="font-family:Fira Code;border:none;font-variant-ligatures:none;background-color:rgb(246, 249, 252);padding:3px;border-radius:3px">build: &quot;next build&quot;</code>.</p>
+<p>I won&#x27;t cover it here, but you&#x27;ll also need to go through tutorials related to <a href="https://nextjs.org/docs/advanced-features/static-html-export" target="_blank">exporting your Next.js project as static HTML</a>.  There are a few gotchas here.  For example, you cannot use the Next.js image optimization or API routes.  You can see the full list of <a href="https://nextjs.org/docs/advanced-features/static-html-export#unsupported-features" target="_blank">unsupported features</a>.</p>
+<p>Long story short, within your <code style="font-family:Fira Code;border:none;font-variant-ligatures:none;background-color:rgb(246, 249, 252);padding:3px;border-radius:3px">package.json</code> file, you should add an <code style="font-family:Fira Code;border:none;font-variant-ligatures:none;background-color:rgb(246, 249, 252);padding:3px;border-radius:3px">export: &quot;next export&quot;</code> script.  This will create an <code style="font-family:Fira Code;border:none;font-variant-ligatures:none;background-color:rgb(246, 249, 252);padding:3px;border-radius:3px">out/</code> directory with HTML files when this command is run.  You probably want to add this directory to your <code style="font-family:Fira Code;border:none;font-variant-ligatures:none;background-color:rgb(246, 249, 252);padding:3px;border-radius:3px">.gitignore</code> file.</p>
+<h3>Deploy key</h3>
+<p>We will be using <a href="https://github.com/peaceiris/actions-gh-pages" target="_blank">peaceiris/actions-gh-pages@v3</a> for making the deployment step easy.  As a part of this, we want to set up an SSH deploy key for safety.</p>
+<p>You can use an SSH key that you already have setup, or create a new one with:</p>
+<pre><div class="codeblock_CodeBlock__P_tQD"><div class="sc-gsDKAQ bnYxmP"><span style="font-size:inherit;font-family:inherit;background:#282c34;color:#abb2bf;border-radius:3px;display:flex;line-height:1.4285714285714286;overflow-x:auto;white-space:pre"><code style="font-size:inherit;font-family:inherit;line-height:1.6666666666666667;padding:8px;float:left;padding-right:10px"><span class="react-syntax-highlighter-line-number">1
+</span></code><code style="font-size:inherit;font-family:inherit;line-height:1.6666666666666667;padding:8px">ssh-keygen -t rsa -b 4096 -C &quot;$(git config user.email)&quot; -f gh-pages -N &quot;&quot;</code></span><button type="button" class="sc-bdvvtL dHMcRP"><svg class="icon" viewBox="0 0 384 512" width="16pt" height="16pt" fill="#abb2bf"><path d="M280 240H168c-4.4 0-8 3.6-8 8v16c0 4.4 3.6 8 8 8h112c4.4 0 8-3.6 8-8v-16c0-4.4-3.6-8-8-8zm0 96H168c-4.4 0-8 3.6-8 8v16c0 4.4 3.6 8 8 8h112c4.4 0 8-3.6 8-8v-16c0-4.4-3.6-8-8-8zM112 232c-13.3 0-24 10.7-24 24s10.7 24 24 24 24-10.7 24-24-10.7-24-24-24zm0 96c-13.3 0-24 10.7-24 24s10.7 24 24 24 24-10.7 24-24-10.7-24-24-24zM336 64h-80c0-35.3-28.7-64-64-64s-64 28.7-64 64H48C21.5 64 0 85.5 0 112v352c0 26.5 21.5 48 48 48h288c26.5 0 48-21.5 48-48V112c0-26.5-21.5-48-48-48zM192 48c8.8 0 16 7.2 16 16s-7.2 16-16 16-16-7.2-16-16 7.2-16 16-16zm144 408c0 4.4-3.6 8-8 8H56c-4.4 0-8-3.6-8-8V120c0-4.4 3.6-8 8-8h40v32c0 8.8 7.2 16 16 16h160c8.8 0 16-7.2 16-16v-32h40c4.4 0 8 3.6 8 8v336z"></path></svg></button></div></div></pre>
+<ol>
+<li>Navigate back to your repository settings, and under security, go to <strong>Deploy keys</strong></li>
+<li>Click <strong>Add a deploy key</strong> and enter <code style="font-family:Fira Code;border:none;font-variant-ligatures:none;background-color:rgb(246, 249, 252);padding:3px;border-radius:3px">ACTIONS_DEPLOY_KEY</code> as the title</li>
+<li>Paste in your public RSA key (ends with <code style="font-family:Fira Code;border:none;font-variant-ligatures:none;background-color:rgb(246, 249, 252);padding:3px;border-radius:3px">.pub</code>)</li>
+<li>Check <strong>Allow write access</strong> and then click <strong>Add key</strong></li>
+</ol>
+<h3><code style="font-family:Fira Code;border:none;font-variant-ligatures:none;background-color:rgb(246, 249, 252);padding:3px;border-radius:3px">deploy.yml</code></h3>
+<p>Now that every thing is set up, we can put this all into a GitHub actions file.</p>
+<p>From the root of the project, create <code style="font-family:Fira Code;border:none;font-variant-ligatures:none;background-color:rgb(246, 249, 252);padding:3px;border-radius:3px">.github/workflows/deploy.yml</code> and refer to the following:</p>
+<pre><div class="codeblock_CodeBlock__P_tQD"><div class="sc-gsDKAQ bnYxmP"><span style="font-size:inherit;font-family:inherit;background:#282c34;color:#abb2bf;border-radius:3px;display:flex;line-height:1.4285714285714286;overflow-x:auto;white-space:pre"><code style="font-size:inherit;font-family:inherit;line-height:1.6666666666666667;padding:8px;float:left;padding-right:10px"><span class="react-syntax-highlighter-line-number">1
+</span><span class="react-syntax-highlighter-line-number">2
+</span><span class="react-syntax-highlighter-line-number">3
+</span><span class="react-syntax-highlighter-line-number">4
+</span><span class="react-syntax-highlighter-line-number">5
+</span><span class="react-syntax-highlighter-line-number">6
+</span><span class="react-syntax-highlighter-line-number">7
+</span><span class="react-syntax-highlighter-line-number">8
+</span><span class="react-syntax-highlighter-line-number">9
+</span><span class="react-syntax-highlighter-line-number">10
+</span><span class="react-syntax-highlighter-line-number">11
+</span><span class="react-syntax-highlighter-line-number">12
+</span><span class="react-syntax-highlighter-line-number">13
+</span><span class="react-syntax-highlighter-line-number">14
+</span><span class="react-syntax-highlighter-line-number">15
+</span><span class="react-syntax-highlighter-line-number">16
+</span><span class="react-syntax-highlighter-line-number">17
+</span><span class="react-syntax-highlighter-line-number">18
+</span><span class="react-syntax-highlighter-line-number">19
+</span><span class="react-syntax-highlighter-line-number">20
+</span><span class="react-syntax-highlighter-line-number">21
+</span><span class="react-syntax-highlighter-line-number">22
+</span><span class="react-syntax-highlighter-line-number">23
+</span><span class="react-syntax-highlighter-line-number">24
+</span><span class="react-syntax-highlighter-line-number">25
+</span><span class="react-syntax-highlighter-line-number">26
+</span><span class="react-syntax-highlighter-line-number">27
+</span><span class="react-syntax-highlighter-line-number">28
+</span><span class="react-syntax-highlighter-line-number">29
+</span><span class="react-syntax-highlighter-line-number">30
+</span><span class="react-syntax-highlighter-line-number">31
+</span><span class="react-syntax-highlighter-line-number">32
+</span><span class="react-syntax-highlighter-line-number">33
+</span><span class="react-syntax-highlighter-line-number">34
+</span><span class="react-syntax-highlighter-line-number">35
+</span><span class="react-syntax-highlighter-line-number">36
+</span><span class="react-syntax-highlighter-line-number">37
+</span><span class="react-syntax-highlighter-line-number">38
+</span><span class="react-syntax-highlighter-line-number">39
+</span><span class="react-syntax-highlighter-line-number">40
+</span><span class="react-syntax-highlighter-line-number">41
+</span><span class="react-syntax-highlighter-line-number">42
+</span><span class="react-syntax-highlighter-line-number">43
+</span><span class="react-syntax-highlighter-line-number">44
+</span><span class="react-syntax-highlighter-line-number">45
+</span><span class="react-syntax-highlighter-line-number">46
+</span><span class="react-syntax-highlighter-line-number">47
+</span></code><code style="font-size:inherit;font-family:inherit;line-height:1.6666666666666667;padding:8px">name: Deploy to Github Pages
+
+on:
+  push:
+    branches:
+      - develop
+
+jobs:
+  deployment:
+    runs-on: ubuntu-latest
+
+    strategy:
+      matrix:
+        node-version: [14.x]
+
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Use Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v2
+        with:
+          node-version: ${{ matrix.node-version }}
+
+      - name: Update NPM
+        run: npm i -g npm@latest
+
+      - name: Cache dependencies
+        uses: actions/cache@v2
+        with:
+          path: ~/.npm
+          key: ${{ runner.OS }}-node-${{ hashFiles(&#x27;**/package-lock.json&#x27;) }}
+          restore-keys: |
+            ${{ runner.OS }}-node-
+            ${{ runner.OS }}-
+
+      - name: Build
+        run: |
+          npm i --legacy-peer-deps
+          npm run build
+          npm run export
+
+      - name: Deploy
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          deploy_key: ${{ secrets.ACTIONS_DEPLOY_KEY }}
+          publish_dir: ./out
+          cname: yoururl.com</code></span><button type="button" class="sc-bdvvtL dHMcRP"><svg class="icon" viewBox="0 0 384 512" width="16pt" height="16pt" fill="#abb2bf"><path d="M280 240H168c-4.4 0-8 3.6-8 8v16c0 4.4 3.6 8 8 8h112c4.4 0 8-3.6 8-8v-16c0-4.4-3.6-8-8-8zm0 96H168c-4.4 0-8 3.6-8 8v16c0 4.4 3.6 8 8 8h112c4.4 0 8-3.6 8-8v-16c0-4.4-3.6-8-8-8zM112 232c-13.3 0-24 10.7-24 24s10.7 24 24 24 24-10.7 24-24-10.7-24-24-24zm0 96c-13.3 0-24 10.7-24 24s10.7 24 24 24 24-10.7 24-24-10.7-24-24-24zM336 64h-80c0-35.3-28.7-64-64-64s-64 28.7-64 64H48C21.5 64 0 85.5 0 112v352c0 26.5 21.5 48 48 48h288c26.5 0 48-21.5 48-48V112c0-26.5-21.5-48-48-48zM192 48c8.8 0 16 7.2 16 16s-7.2 16-16 16-16-7.2-16-16 7.2-16 16-16zm144 408c0 4.4-3.6 8-8 8H56c-4.4 0-8-3.6-8-8V120c0-4.4 3.6-8 8-8h40v32c0 8.8 7.2 16 16 16h160c8.8 0 16-7.2 16-16v-32h40c4.4 0 8 3.6 8 8v336z"></path></svg></button></div></div></pre>
+<p>A few things to note:</p>
+<ul>
+<li>The branch I actively work on is <code style="font-family:Fira Code;border:none;font-variant-ligatures:none;background-color:rgb(246, 249, 252);padding:3px;border-radius:3px">develop</code>, so you&#x27;ll want to update that to the branch you push to</li>
+<li>If you didn&#x27;t name your deploy key <code style="font-family:Fira Code;border:none;font-variant-ligatures:none;background-color:rgb(246, 249, 252);padding:3px;border-radius:3px">ACTIONS_DEPLOY_KEY</code>, change the <code style="font-family:Fira Code;border:none;font-variant-ligatures:none;background-color:rgb(246, 249, 252);padding:3px;border-radius:3px">deploy_key</code> value to <code style="font-family:Fira Code;border:none;font-variant-ligatures:none;background-color:rgb(246, 249, 252);padding:3px;border-radius:3px">secrets.[Your key name]</code> in the <strong>Deploy</strong> step</li>
+<li>The <code style="font-family:Fira Code;border:none;font-variant-ligatures:none;background-color:rgb(246, 249, 252);padding:3px;border-radius:3px">cname</code> value in the <strong>Deploy</strong> step should be replaced with your newly configured custom domain</li>
+</ul>
+<p>Now, each time you commit and push up you blog changes, your blog should automatically be built and served under your custom domain.</p>
+<p>Just like that, your blog is just as functional as a cookiecutter template 🍪 and more easy to build upon than ever before.</p>
+<hr/></article></main></div><footer class="footer_FooterContainer__oKXDJ"><div class="footer_Footer__wsKMY"><div class="footer_FooterName__4egKC">© <time>2022</time> Bradley Schoeneweis</div><div class="footer_FooterLinks__2mme5"><a href="https://www.linkedin.com/in/bradley-schoeneweis/" target="_blank"><img width="16" src="/icons/linkedin.svg" alt="linkedin logo" class="footer_SocialLinkLogo__OWB_i"/></a><a href="https://github.com/bschoeneweis" target="_blank"><img width="16" src="/icons/github.svg" alt="github logo" class="footer_SocialLinkLogo__OWB_i"/></a><a href="https://medium.com/@bradley-schoeneweis" target="_blank"><img width="16" src="/icons/medium.svg" alt="medium logo" class="footer_SocialLinkLogo__OWB_i"/></a><a href="https://dev.to/bschoeneweis" target="_blank"><img width="16" src="/icons/dev.svg" alt="dev logo" class="footer_SocialLinkLogo__OWB_i"/></a><a href="/feed.xml"><img width="16" src="/icons/rss.svg" alt="rss logo" class="footer_SocialLinkLogo__OWB_i"/></a></div></div></footer></div><script id="__NEXT_DATA__" type="application/json">{"props":{"pageProps":{"postData":{"id":"rebuilding-my-blog","contentHtml":"\u003ch2\u003eVersion \u003ccode\u003e0.1.x\u003c/code\u003e\u003c/h2\u003e\n\u003cp\u003eThe first iteration of my blog was built using a pre-configured \u003ca href=\"https://www.gatsbyjs.com/\"\u003eGatsbyJS\u003c/a\u003e site template.  I chose a template (\u003ca href=\"https://novela.narative.co/\"\u003eNovela by Narative\u003c/a\u003e) that checked all my boxes for an easy tool to start sharing my writing.\u003c/p\u003e\n\u003cul\u003e\n\u003cli\u003eThe theme was modern and sleek\u003c/li\u003e\n\u003cli\u003eEverything was mobile-friendly\u003c/li\u003e\n\u003cli\u003eLots of plug-and-play options and prebuilt components that flowed together\n\u003cul\u003e\n\u003cli\u003eArticle metadata that connects to an author bio page\u003c/li\u003e\n\u003cli\u003eReading time estimates and progress bars\u003c/li\u003e\n\u003cli\u003eEasy image optimizations\u003c/li\u003e\n\u003cli\u003eA config for a Google Analytics tag\u003c/li\u003e\n\u003c/ul\u003e\n\u003c/li\u003e\n\u003cli\u003eDeployment was straightforward with GitHub pages\u003c/li\u003e\n\u003c/ul\u003e\n\u003cp\u003eBut most importantly, all I had to do was add Markdown pages to a directory to get started.  At the time, I didn't really know much about GatsbyJS, other than it being a popular static site generator, and my modern JavaScript knowledge was introductory at-best (albeit growing each and every day).  So this seemed like the perfect route forward.\u003c/p\u003e\n\u003ch2\u003eThe problem\u003c/h2\u003e\n\u003cp\u003eAs I started writing more and more posts, I began noting different features I wanted to include on my site.  These weren't terribly complex additions, but rather simple things like adding tags to group common posts or wanting to change the styling of the inline code snippets.\u003c/p\u003e\n\u003cp\u003eI soon discovered that trying to color outside the lines when using a cookiecutter template can get very complex, very quickly.\u003c/p\u003e\n\u003cp\u003eI found myself digging into nested modules in my \u003ccode\u003enode_modules\u003c/code\u003e folder where I would need to overload different functions and components to get what I wanted.  It was added complexity than I didn't foresee when I signed up to use a template.  Plus, this site could eventually house more than just a blog, and the template I chose wasn't designed to accommodate much else.\u003c/p\u003e\n\u003ch2\u003eWhat now?\u003c/h2\u003e\n\u003cp\u003eIf you haven't noticed from the timestamp on my last article, I haven't written a post in ~9 months.  This is largely because I was interviewing for new positions and eventually joined the team at \u003ca href=\"https://radar.com\"\u003eRadar\u003c/a\u003e as a Product Engineer!  Preparation for interviews and taking a break after accepting this new position occupied much of the time I would normally spend writing.  Plus, taking a break from coding outside of work is a good way to avoid burnout 🤷‍♂️.\u003c/p\u003e\n\u003cp\u003eThe reason I mention this is because one of the technologies we use at Radar is \u003ca href=\"https://nextjs.org/\"\u003eNext.js\u003c/a\u003e.  Next.js was something I was already trying to learn in my free time, but I've been able to gain a good amount of experience with it since I've started my new role, and my modern JavaScript fundamentals and understanding have grown drastically in the past several month (expect a lot more JavaScript posts going forward).\u003c/p\u003e\n\u003cp\u003eSeeing the power of Next.js and knowing I wanted my blog to be more flexible, I decided to recreate my blog from scratch using Next.js.\u003c/p\u003e\n\u003chr\u003e\n\u003ch2\u003eNext.js\u003c/h2\u003e\n\u003cp\u003eA quick prelude on \u003ca href=\"https://nextjs.org/\"\u003eNext.js\u003c/a\u003e for those who have never used it.  \u003ca href=\"https://vercel.com/\"\u003eVercel\u003c/a\u003e, the creators of Next.js (and a company to keep 👀 on) says it best, Next.js is...\u003c/p\u003e\n\u003cblockquote\u003e\n\u003cp\u003e\"The \u003ca href=\"https://reactjs.org/\"\u003eReact\u003c/a\u003e Framework for Production\"\u003c/p\u003e\n\u003c/blockquote\u003e\n\u003cp\u003eNext.js comes with a ton of great built-in features including:\u003c/p\u003e\n\u003cul\u003e\n\u003cli\u003eStatic + server-side rendering\u003c/li\u003e\n\u003cli\u003eSmart bundling and code-splitting, TypeScript support, Routing, Fast Refresh, CSS + Sass support all without complex configs\u003c/li\u003e\n\u003cli\u003eImage optimization\u003c/li\u003e\n\u003cli\u003eIntuitive code organization (because there are a million-plus ways to organize a React project)\u003c/li\u003e\n\u003cli\u003eStatic HTML exports (this one is important for our purposes)\u003c/li\u003e\n\u003cli\u003eSo much more...\u003c/li\u003e\n\u003c/ul\u003e\n\u003cp\u003e\u003cstrong\u003eIt's an awesome framework.\u003c/strong\u003e\u003c/p\u003e\n\u003cp\u003eCoincidentally enough, the \u003ca href=\"https://nextjs.org/learn/basics/create-nextjs-app\"\u003eNext.js hands-on tutorial\u003c/a\u003e walks you through setting up a blog with Next.js. Following this tutorial will set you up with a great and simplistic starter blog (but not quite ready for deployment on GitHub pages, where this blog lives at the time of writing).\u003c/p\u003e\n\u003cp\u003eA few things this tutorial covers:\u003c/p\u003e\n\u003cul\u003e\n\u003cli\u003eCreating the Next.js app\u003c/li\u003e\n\u003cli\u003eBasics like in-app navigation, styling, adding images and more\u003c/li\u003e\n\u003cli\u003eSetting up metadata, blog pages, and pre-rendering\u003c/li\u003e\n\u003cli\u003eMarkdown ➡️ HTML\u003c/li\u003e\n\u003cli\u003eReworking your app to use dynamic routing\u003c/li\u003e\n\u003c/ul\u003e\n\u003cp\u003eThe tutorial is great so I won't cover anything that's already covered there.  If you're interested in using Next.js, you should definitely go through it.\u003c/p\u003e\n\u003chr\u003e\n\u003ch2\u003eBeyond the basics\u003c/h2\u003e\n\u003cp\u003eAs mentioned, the \u003ca href=\"https://nextjs.org/learn/basics/create-nextjs-app\"\u003eNext.js tutorial\u003c/a\u003e is a great starting point, but I wanted to get my blog to a place where it was comparable to the previous iteration, along with the new features that encouraged me to take on this project in the first place.\u003c/p\u003e\n\u003cp\u003eTo keep things concise, we'll cover adding \u003ca href=\"/tags\"\u003etags\u003c/a\u003e, adding a custom domain from \u003ca href=\"https://domains.google/\"\u003eGoogle Domains\u003c/a\u003e to GitHub pages, and adding a GitHub action to automatically build and deploy our blog on each commit.\u003c/p\u003e\n\u003chr\u003e\n\u003ch2\u003eTags\u003c/h2\u003e\n\u003cp\u003eOrganization within code and outside of code is always at the top of my priority list, so categorizing posts by tag was first on my blog todo list.\u003c/p\u003e\n\u003ch3\u003eAdding tags to each post\u003c/h3\u003e\n\u003cp\u003eFirst, let's add tags to each of our posts.  We can work off of the blog data section of the \u003ca href=\"https://nextjs.org/learn/basics/data-fetching/blog-data\"\u003eNext.js tutorial\u003c/a\u003e and add some additional YAML metadata to our markdown posts using \u003ca href=\"https://github.com/jonschlinkert/gray-matter\"\u003egray-matter\u003c/a\u003e.\u003c/p\u003e\n\u003cp\u003eWithin the current metadata, add a list of tags relevant to the post:\u003c/p\u003e\n\u003cpre\u003e\u003ccode\u003e---\ntitle: 'Rebuilding my blog from scratch with Next.js'\ndate: '2022-04-23'\ntags: ['nextjs', 'react', 'javascript']\ndescription: 'Rebuilding my blog from a Gatsby.js templated site to a custom Next.js site from scratch.'\n---\n\u003c/code\u003e\u003c/pre\u003e\n\u003cp\u003eI won't cover rendering of the tags below each posts in the post list, but the tags list should get picked up automatically with the \u003ccode\u003egetSortedPostsData()\u003c/code\u003e function that was already written and is called by \u003ccode\u003egetStaticProps()\u003c/code\u003e in order to pass props down the the post related components.\u003c/p\u003e\n\u003ch3\u003e/tags/[tag]\u003c/h3\u003e\n\u003cp\u003eWhat we've done so far will associate posts with a list of tags, but now we also want a page for each tag that lists out the associated posts.  For example, to view \u003ccode\u003epython\u003c/code\u003e related posts, we can go to \u003ca href=\"/tags/python\"\u003e/tags/python\u003c/a\u003e.\u003c/p\u003e\n\u003cp\u003eWith Next.js, this can be done easily using \u003ca href=\"https://nextjs.org/docs/routing/dynamic-routes\"\u003edynamic routes\u003c/a\u003e.\u003c/p\u003e\n\u003cp\u003eUnder the \u003ccode\u003epages/\u003c/code\u003e directory, create a \u003ccode\u003epages/tags/[tag].js\u003c/code\u003e file structure.  We'll be repeating similar patterns done within \u003ccode\u003epages/posts/[id].js\u003c/code\u003e.\u003c/p\u003e\n\u003cp\u003eLike earlier, we need to implement \u003ccode\u003egetStaticProps()\u003c/code\u003e (\u003ca href=\"https://nextjs.org/docs/basic-features/data-fetching/get-static-props\"\u003emore info here\u003c/a\u003e), so we can render these pages at build time.  We also need to implement \u003ccode\u003egetStaticPaths()\u003c/code\u003e (\u003ca href=\"https://nextjs.org/docs/basic-features/data-fetching/get-static-paths\"\u003emore info here\u003c/a\u003e) to get a list of all possible tags at build time.\u003c/p\u003e\n\u003cp\u003eLet's create a \u003ccode\u003elib/tags.js\u003c/code\u003e file to house some of the helper functions to implement \u003ccode\u003egetStaticProps()\u003c/code\u003e and \u003ccode\u003egetStaticPaths()\u003c/code\u003e.\u003c/p\u003e\n\u003cp\u003eFirst, we want to get a list of all the tags so we can write \u003ccode\u003egetStaticPaths()\u003c/code\u003e.  This will require processing all of the files within \u003ccode\u003eposts/\u003c/code\u003e, and processing the metadata using \u003ca href=\"https://github.com/jonschlinkert/gray-matter\"\u003egray-matter\u003c/a\u003e.\u003c/p\u003e\n\u003cpre\u003e\u003ccode\u003eimport fs from 'fs';\nimport path from 'path';\nimport matter from 'gray-matter';\n\nconst postsDirectory = path.join(process.cwd(), 'posts');\n\nexport async function getAllTags() {\n  const fileNames = fs.readdirSync(postsDirectory);\n  const tags = new Set();\n\n  fileNames.map(fileName =\u003e {\n    // Read markdown file as string\n    const fullPath = path.join(postsDirectory, fileName);\n    const fileContents = fs.readFileSync(fullPath, 'utf8');\n\n    // Use gray-matter to parse the post metadata section\n    const matterResult = matter(fileContents);\n    if (matterResult?.data?.tags) {\n      matterResult.data.tags.forEach(\n        (tag) =\u003e tags.add(`/tags/${tag.replace(/\\s+/g, '-').toLowerCase()}`)\n      );\n    }\n  });\n\n  return Array.from(tags);\n}\n\u003c/code\u003e\u003c/pre\u003e\n\u003cp\u003eNow we can call this within \u003ccode\u003epages/tags/[tag].js\u003c/code\u003e under \u003ccode\u003egetStaticPaths()\u003c/code\u003e\u003c/p\u003e\n\u003cpre\u003e\u003ccode\u003eexport async function getStaticPaths() {\n  const paths = await getAllTags();\n  return {\n    paths,\n    fallback: false,\n  }\n}\n\u003c/code\u003e\u003c/pre\u003e\n\u003cp\u003eNow, we can add another helper function \u003ccode\u003egetPostDataByTag()\u003c/code\u003e in \u003ccode\u003elib/tags.js\u003c/code\u003e to fulfill \u003ccode\u003egetStaticProps()\u003c/code\u003e.  This is basically what we already do with \u003ccode\u003epages/posts/[id].js\u003c/code\u003e, and it's not very efficient to do this twice, but all of this is happening at build time so it's not a huge deal for us.\u003c/p\u003e\n\u003cp\u003eFor this, we will use \u003ca href=\"https://github.com/remarkjs/remark\"\u003eremark\u003c/a\u003e to process our markdown files.\u003c/p\u003e\n\u003cpre\u003e\u003ccode\u003eimport fs from 'fs';\nimport path from 'path';\nimport matter from 'gray-matter';\nimport { remark } from 'remark';\nimport html from 'remark-html';\n\nconst postsDirectory = path.join(process.cwd(), 'posts');\n\nexport async function getPostDataByTag(tag) {\n  const fileNames = fs.readdirSync(postsDirectory);\n  const posts = [];\n\n  fileNames.map(async (fileName) =\u003e {\n    const id = fileName.replace(/\\.md$/, '');\n  \n    // Read markdown file as string\n    const fullPath = path.join(postsDirectory, fileName);\n    const fileContents = fs.readFileSync(fullPath, 'utf8');\n\n    // Use gray-matter to parse the post metadata section\n    const matterResult = matter(fileContents);\n\n    if (matterResult?.data?.tags \u0026#x26;\u0026#x26; matterResult.data.tags.includes(tag)) {\n      // Use remark to convert markdown into HTML string\n      const processedContent = await remark()\n        .use(html)\n        .process(matterResult.content);\n      const contentHtml = processedContent.toString();\n\n      // Combine the data with the id and contentHtml\n      posts.push({\n        id,\n        contentHtml,\n        markdown: matterResult.content,\n        ...matterResult.data,\n      });\n    }\n  });\n\n  return posts;\n}\n\u003c/code\u003e\u003c/pre\u003e\n\u003cp\u003eWe can call this helper function in \u003ccode\u003epages/tags/[tag].js\u003c/code\u003e under \u003ccode\u003egetStaticProps()\u003c/code\u003e\u003c/p\u003e\n\u003cpre\u003e\u003ccode\u003eexport async function getStaticProps({ params }) {\n  const { tag } = params;\n  const taggedPosts = await getPostDataByTag(tag);\n  return {\n    props: {\n      tag,\n      taggedPosts,\n    },\n  };\n}\n\u003c/code\u003e\u003c/pre\u003e\n\u003cp\u003eNow, you can render the associated tag pages as you wish, but I did it with a few components I had set up:\u003c/p\u003e\n\u003cpre\u003e\u003ccode\u003eexport default function TagPage({ tag, taggedPosts }) {\n  const title = `Posts tagged \"${tag}\"`;\n  return (\n    \u0026#x3C;Layout tagPage title={title} description={title}\u003e \n      \u0026#x3C;header\u003e\n        \u0026#x3C;Tag tag={tag} isHeader/\u003e\n      \u0026#x3C;/header\u003e\n\n      \u0026#x3C;section\u003e\n        \u0026#x3C;PostList posts={taggedPosts} /\u003e\n      \u0026#x3C;/section\u003e\n    \u0026#x3C;/Layout\u003e\n  );\n}\n\u003c/code\u003e\u003c/pre\u003e\n\u003ch3\u003eAll tags\u003c/h3\u003e\n\u003cp\u003eThe last thing we want to add is a page containing all of the tags in a list, and all of the posts organized into categories.\u003c/p\u003e\n\u003cp\u003eTo do this, we can add \u003ccode\u003epages/tags.js\u003c/code\u003e, which can be reached at \u003ca href=\"/tags\"\u003e/tags\u003c/a\u003e.\u003c/p\u003e\n\u003cp\u003eOnce again, we want to implement \u003ccode\u003egetStaticProps()\u003c/code\u003e so we can pre-render this page at build time.  Luckily, we can reuse the two functions we wrote in \u003ccode\u003elib/tags.js\u003c/code\u003e to make this easy.\u003c/p\u003e\n\u003cpre\u003e\u003ccode\u003eimport { getAllTags, getPostDataByTag } from '../lib/tags'\n\nexport async function getStaticProps() {\n  const tagsWithPosts = {};\n  const allTags = await getAllTags();\n\n  for (const tagPath of allTags) {\n    const tag = tagPath.replace('/tags/', '');\n    tagsWithPosts[tag] = await getPostDataByTag(tag);\n  }\n\n  return {\n    props: {\n      tagsWithPosts,\n    },\n  };\n}\n\u003c/code\u003e\u003c/pre\u003e\n\u003cp\u003eNow, you can render this as you'd like using \u003ccode\u003etagsWithPosts\u003c/code\u003e as a prop in your page component.  I also like having a toggle to show/hide the associated posts.\u003c/p\u003e\n\u003cpre\u003e\u003ccode\u003eexport default function TagPage({ tagsWithPosts }) {\n  const [showPosts, setShowPosts] = useState(false);\n\n  const tagAndPostList = Object.keys(tagsWithPosts).map((tag) =\u003e {\n    return (\n      \u0026#x3C;section key={tag}\u003e\n        \u0026#x3C;Tag tag={tag} isHeader useLink label={tagsWithPosts[tag].length} /\u003e\n        {showPosts \u0026#x26;\u0026#x26; \u0026#x3C;PostList posts={tagsWithPosts[tag]} withPadding /\u003e }\n      \u0026#x3C;/section\u003e\n    );\n  });\n\n  const title = 'All Tags';\n  return (\n    \u0026#x3C;Layout title={title} description={title}\u003e\n      \u0026#x3C;header\u003e\n        \u0026#x3C;h1\u003eAll tags\u0026#x3C;/h1\u003e\n        \u0026#x3C;div\u003e\n          \u0026#x3C;Checkbox label={'Show posts'} value={showPosts} onChange={(x) =\u003e setShowPosts(!showPosts)} /\u003e\n        \u0026#x3C;/div\u003e\n      \u0026#x3C;/header\u003e\n\n      {tagAndPostList}\n\n    \u0026#x3C;/Layout\u003e\n  );\n}\n\u003c/code\u003e\u003c/pre\u003e\n\u003cp\u003eNow we have a page with all of our tags 🙌.\u003c/p\u003e\n\u003chr\u003e\n\u003ch2\u003eAdding a custom domain\u003c/h2\u003e\n\u003cp\u003eNext on my todo list was adding a custom domain to transition from bschoeneweis.github.io ➡️ bradleyschoeneweis.com.  GitHub gives a good overview of the steps \u003ca href=\"https://docs.github.com/en/pages/configuring-a-custom-domain-for-your-github-pages-site/managing-a-custom-domain-for-your-github-pages-site#configuring-an-apex-domain\"\u003ehere\u003c/a\u003e, but we'll go through it below specifically using \u003ca href=\"https://domains.google/\"\u003eGoogle domains\u003c/a\u003e.\u003c/p\u003e\n\u003cp\u003eWe'll be using an apex domain (e.g. bradleyschoeneweis.com).\u003c/p\u003e\n\u003ch3\u003eGitHub changes\u003c/h3\u003e\n\u003col\u003e\n\u003cli\u003eGo to the repository settings for your GitHub pages repository\u003c/li\u003e\n\u003cli\u003eClick into the \u003cstrong\u003ePages\u003c/strong\u003e section\u003c/li\u003e\n\u003cli\u003eType your apex domain into the \u003cstrong\u003eCustom domain\u003c/strong\u003e input and click \u003cstrong\u003eSave\u003c/strong\u003e\u003c/li\u003e\n\u003c/ol\u003e\n\u003ch3\u003eGoogle domains changes\u003c/h3\u003e\n\u003col\u003e\n\u003cli\u003eGo to your \u003ca href=\"https://domains.google.com/registrar/\"\u003eGoogle domains registrar\u003c/a\u003e\u003c/li\u003e\n\u003cli\u003eClick \u003cstrong\u003eManage\u003c/strong\u003e on the domain you'd like to use\u003c/li\u003e\n\u003cli\u003eNavigate to the \u003cstrong\u003eDNS\u003c/strong\u003e settings and under \u003cstrong\u003eResource records\u003c/strong\u003e, click \u003cstrong\u003eManage custom records\u003c/strong\u003e\u003c/li\u003e\n\u003cli\u003eRefer to the \u003ca href=\"https://docs.github.com/en/pages/configuring-a-custom-domain-for-your-github-pages-site/managing-a-custom-domain-for-your-github-pages-site#configuring-an-apex-domain\"\u003eGitHub documentation\u003c/a\u003e for the official IP address list, but add the following \u003ccode\u003eA\u003c/code\u003e and \u003ccode\u003eCNAME\u003c/code\u003e records\u003c/li\u003e\n\u003c/ol\u003e\n\u003cp\u003e\u003cimg src=\"/images/rebuilding-my-blog/dns-records.jpg\" alt=\"DNS records\"\u003e\u003c/p\u003e\n\u003ch3\u003eFinal steps and confirmation\u003c/h3\u003e\n\u003col\u003e\n\u003cli\u003eHead back to the \u003cstrong\u003ePages\u003c/strong\u003e settings for your repository and check \u003cstrong\u003eEnforce HTTPS\u003c/strong\u003e\u003c/li\u003e\n\u003cli\u003eAfter a bit of time has passed, run \u003ccode\u003edig www.mynewdomain.com +nostats +nocomments +nocmd\u003c/code\u003e replace with your domain name and your output should look similar to the following:\u003c/li\u003e\n\u003c/ol\u003e\n\u003cp\u003e\u003cimg src=\"/images/rebuilding-my-blog/dig-output.jpg\" alt=\"dig output\"\u003e\u003c/p\u003e\n\u003cp\u003eNow your custom domain should be all set up with your GitHub pages blog! 🎉\u003c/p\u003e\n\u003chr\u003e\n\u003ch2\u003eSimple automated deployment\u003c/h2\u003e\n\u003cp\u003eFor the final touches, I didn't want to have to worry about building the blog locally each time, so we'll create a simple GitHub action to build and serve our blog on each commit.\u003c/p\u003e\n\u003ch3\u003eThe \u003ccode\u003epackage.json\u003c/code\u003e scripts\u003c/h3\u003e\n\u003cp\u003eIf you don't have one already, you should create a \u003ccode\u003ebuild\u003c/code\u003e script in \u003ccode\u003epackage.json\u003c/code\u003e as \u003ccode\u003ebuild: \"next build\"\u003c/code\u003e.\u003c/p\u003e\n\u003cp\u003eI won't cover it here, but you'll also need to go through tutorials related to \u003ca href=\"https://nextjs.org/docs/advanced-features/static-html-export\"\u003eexporting your Next.js project as static HTML\u003c/a\u003e.  There are a few gotchas here.  For example, you cannot use the Next.js image optimization or API routes.  You can see the full list of \u003ca href=\"https://nextjs.org/docs/advanced-features/static-html-export#unsupported-features\"\u003eunsupported features\u003c/a\u003e.\u003c/p\u003e\n\u003cp\u003eLong story short, within your \u003ccode\u003epackage.json\u003c/code\u003e file, you should add an \u003ccode\u003eexport: \"next export\"\u003c/code\u003e script.  This will create an \u003ccode\u003eout/\u003c/code\u003e directory with HTML files when this command is run.  You probably want to add this directory to your \u003ccode\u003e.gitignore\u003c/code\u003e file.\u003c/p\u003e\n\u003ch3\u003eDeploy key\u003c/h3\u003e\n\u003cp\u003eWe will be using \u003ca href=\"https://github.com/peaceiris/actions-gh-pages\"\u003epeaceiris/actions-gh-pages@v3\u003c/a\u003e for making the deployment step easy.  As a part of this, we want to set up an SSH deploy key for safety.\u003c/p\u003e\n\u003cp\u003eYou can use an SSH key that you already have setup, or create a new one with:\u003c/p\u003e\n\u003cpre\u003e\u003ccode\u003essh-keygen -t rsa -b 4096 -C \"$(git config user.email)\" -f gh-pages -N \"\"\n\u003c/code\u003e\u003c/pre\u003e\n\u003col\u003e\n\u003cli\u003eNavigate back to your repository settings, and under security, go to \u003cstrong\u003eDeploy keys\u003c/strong\u003e\u003c/li\u003e\n\u003cli\u003eClick \u003cstrong\u003eAdd a deploy key\u003c/strong\u003e and enter \u003ccode\u003eACTIONS_DEPLOY_KEY\u003c/code\u003e as the title\u003c/li\u003e\n\u003cli\u003ePaste in your public RSA key (ends with \u003ccode\u003e.pub\u003c/code\u003e)\u003c/li\u003e\n\u003cli\u003eCheck \u003cstrong\u003eAllow write access\u003c/strong\u003e and then click \u003cstrong\u003eAdd key\u003c/strong\u003e\u003c/li\u003e\n\u003c/ol\u003e\n\u003ch3\u003e\u003ccode\u003edeploy.yml\u003c/code\u003e\u003c/h3\u003e\n\u003cp\u003eNow that every thing is set up, we can put this all into a GitHub actions file.\u003c/p\u003e\n\u003cp\u003eFrom the root of the project, create \u003ccode\u003e.github/workflows/deploy.yml\u003c/code\u003e and refer to the following:\u003c/p\u003e\n\u003cpre\u003e\u003ccode\u003ename: Deploy to Github Pages\n\non:\n  push:\n    branches:\n      - develop\n\njobs:\n  deployment:\n    runs-on: ubuntu-latest\n\n    strategy:\n      matrix:\n        node-version: [14.x]\n\n    steps:\n      - uses: actions/checkout@v2\n\n      - name: Use Node.js ${{ matrix.node-version }}\n        uses: actions/setup-node@v2\n        with:\n          node-version: ${{ matrix.node-version }}\n\n      - name: Update NPM\n        run: npm i -g npm@latest\n\n      - name: Cache dependencies\n        uses: actions/cache@v2\n        with:\n          path: ~/.npm\n          key: ${{ runner.OS }}-node-${{ hashFiles('**/package-lock.json') }}\n          restore-keys: |\n            ${{ runner.OS }}-node-\n            ${{ runner.OS }}-\n\n      - name: Build\n        run: |\n          npm i --legacy-peer-deps\n          npm run build\n          npm run export\n\n      - name: Deploy\n        uses: peaceiris/actions-gh-pages@v3\n        with:\n          deploy_key: ${{ secrets.ACTIONS_DEPLOY_KEY }}\n          publish_dir: ./out\n          cname: yoururl.com\n\u003c/code\u003e\u003c/pre\u003e\n\u003cp\u003eA few things to note:\u003c/p\u003e\n\u003cul\u003e\n\u003cli\u003eThe branch I actively work on is \u003ccode\u003edevelop\u003c/code\u003e, so you'll want to update that to the branch you push to\u003c/li\u003e\n\u003cli\u003eIf you didn't name your deploy key \u003ccode\u003eACTIONS_DEPLOY_KEY\u003c/code\u003e, change the \u003ccode\u003edeploy_key\u003c/code\u003e value to \u003ccode\u003esecrets.[Your key name]\u003c/code\u003e in the \u003cstrong\u003eDeploy\u003c/strong\u003e step\u003c/li\u003e\n\u003cli\u003eThe \u003ccode\u003ecname\u003c/code\u003e value in the \u003cstrong\u003eDeploy\u003c/strong\u003e step should be replaced with your newly configured custom domain\u003c/li\u003e\n\u003c/ul\u003e\n\u003cp\u003eNow, each time you commit and push up you blog changes, your blog should automatically be built and served under your custom domain.\u003c/p\u003e\n\u003cp\u003eJust like that, your blog is just as functional as a cookiecutter template 🍪 and more easy to build upon than ever before.\u003c/p\u003e\n\u003chr\u003e\n","markdown":"\n## Version `0.1.x`\n\nThe first iteration of my blog was built using a pre-configured [GatsbyJS](https://www.gatsbyjs.com/) site template.  I chose a template ([Novela by Narative](https://novela.narative.co/)) that checked all my boxes for an easy tool to start sharing my writing.\n\n- The theme was modern and sleek\n- Everything was mobile-friendly\n- Lots of plug-and-play options and prebuilt components that flowed together\n  - Article metadata that connects to an author bio page\n  - Reading time estimates and progress bars\n  - Easy image optimizations\n  - A config for a Google Analytics tag\n- Deployment was straightforward with GitHub pages\n  \nBut most importantly, all I had to do was add Markdown pages to a directory to get started.  At the time, I didn't really know much about GatsbyJS, other than it being a popular static site generator, and my modern JavaScript knowledge was introductory at-best (albeit growing each and every day).  So this seemed like the perfect route forward.\n\n## The problem\n\nAs I started writing more and more posts, I began noting different features I wanted to include on my site.  These weren't terribly complex additions, but rather simple things like adding tags to group common posts or wanting to change the styling of the inline code snippets.\n\nI soon discovered that trying to color outside the lines when using a cookiecutter template can get very complex, very quickly.\n\nI found myself digging into nested modules in my `node_modules` folder where I would need to overload different functions and components to get what I wanted.  It was added complexity than I didn't foresee when I signed up to use a template.  Plus, this site could eventually house more than just a blog, and the template I chose wasn't designed to accommodate much else.\n\n## What now?\n\nIf you haven't noticed from the timestamp on my last article, I haven't written a post in ~9 months.  This is largely because I was interviewing for new positions and eventually joined the team at [Radar](https://radar.com) as a Product Engineer!  Preparation for interviews and taking a break after accepting this new position occupied much of the time I would normally spend writing.  Plus, taking a break from coding outside of work is a good way to avoid burnout 🤷‍♂️.\n\nThe reason I mention this is because one of the technologies we use at Radar is [Next.js](https://nextjs.org/).  Next.js was something I was already trying to learn in my free time, but I've been able to gain a good amount of experience with it since I've started my new role, and my modern JavaScript fundamentals and understanding have grown drastically in the past several month (expect a lot more JavaScript posts going forward).\n\nSeeing the power of Next.js and knowing I wanted my blog to be more flexible, I decided to recreate my blog from scratch using Next.js.\n\n---\n\n## Next.js\n\nA quick prelude on [Next.js](https://nextjs.org/) for those who have never used it.  [Vercel](https://vercel.com/), the creators of Next.js (and a company to keep 👀 on) says it best, Next.js is...\n\n\u003e \"The [React](https://reactjs.org/) Framework for Production\"\n\nNext.js comes with a ton of great built-in features including:\n- Static + server-side rendering\n- Smart bundling and code-splitting, TypeScript support, Routing, Fast Refresh, CSS + Sass support all without complex configs\n- Image optimization\n- Intuitive code organization (because there are a million-plus ways to organize a React project)\n- Static HTML exports (this one is important for our purposes)\n- So much more...\n\n**It's an awesome framework.**\n\nCoincidentally enough, the [Next.js hands-on tutorial](https://nextjs.org/learn/basics/create-nextjs-app) walks you through setting up a blog with Next.js. Following this tutorial will set you up with a great and simplistic starter blog (but not quite ready for deployment on GitHub pages, where this blog lives at the time of writing).\n\nA few things this tutorial covers:\n- Creating the Next.js app\n- Basics like in-app navigation, styling, adding images and more\n- Setting up metadata, blog pages, and pre-rendering\n- Markdown ➡️ HTML\n- Reworking your app to use dynamic routing\n\nThe tutorial is great so I won't cover anything that's already covered there.  If you're interested in using Next.js, you should definitely go through it.\n\n---\n\n## Beyond the basics\n\nAs mentioned, the [Next.js tutorial](https://nextjs.org/learn/basics/create-nextjs-app) is a great starting point, but I wanted to get my blog to a place where it was comparable to the previous iteration, along with the new features that encouraged me to take on this project in the first place.\n\nTo keep things concise, we'll cover adding [tags](/tags), adding a custom domain from [Google Domains](https://domains.google/) to GitHub pages, and adding a GitHub action to automatically build and deploy our blog on each commit.\n\n---\n\n## Tags\nOrganization within code and outside of code is always at the top of my priority list, so categorizing posts by tag was first on my blog todo list.\n\n### Adding tags to each post\n\nFirst, let's add tags to each of our posts.  We can work off of the blog data section of the [Next.js tutorial](https://nextjs.org/learn/basics/data-fetching/blog-data) and add some additional YAML metadata to our markdown posts using [gray-matter](https://github.com/jonschlinkert/gray-matter).\n\nWithin the current metadata, add a list of tags relevant to the post:\n\n```yaml\n---\ntitle: 'Rebuilding my blog from scratch with Next.js'\ndate: '2022-04-23'\ntags: ['nextjs', 'react', 'javascript']\ndescription: 'Rebuilding my blog from a Gatsby.js templated site to a custom Next.js site from scratch.'\n---\n```\n\nI won't cover rendering of the tags below each posts in the post list, but the tags list should get picked up automatically with the `getSortedPostsData()` function that was already written and is called by `getStaticProps()` in order to pass props down the the post related components.\n\n### /tags/[tag]\n\nWhat we've done so far will associate posts with a list of tags, but now we also want a page for each tag that lists out the associated posts.  For example, to view `python` related posts, we can go to [/tags/python](/tags/python).\n\nWith Next.js, this can be done easily using [dynamic routes](https://nextjs.org/docs/routing/dynamic-routes).\n\nUnder the `pages/` directory, create a `pages/tags/[tag].js` file structure.  We'll be repeating similar patterns done within `pages/posts/[id].js`.\n\nLike earlier, we need to implement `getStaticProps()` ([more info here](https://nextjs.org/docs/basic-features/data-fetching/get-static-props)), so we can render these pages at build time.  We also need to implement `getStaticPaths()` ([more info here](https://nextjs.org/docs/basic-features/data-fetching/get-static-paths)) to get a list of all possible tags at build time.\n\nLet's create a `lib/tags.js` file to house some of the helper functions to implement `getStaticProps()` and `getStaticPaths()`.\n\nFirst, we want to get a list of all the tags so we can write `getStaticPaths()`.  This will require processing all of the files within `posts/`, and processing the metadata using [gray-matter](https://github.com/jonschlinkert/gray-matter).\n\n```js\nimport fs from 'fs';\nimport path from 'path';\nimport matter from 'gray-matter';\n\nconst postsDirectory = path.join(process.cwd(), 'posts');\n\nexport async function getAllTags() {\n  const fileNames = fs.readdirSync(postsDirectory);\n  const tags = new Set();\n\n  fileNames.map(fileName =\u003e {\n    // Read markdown file as string\n    const fullPath = path.join(postsDirectory, fileName);\n    const fileContents = fs.readFileSync(fullPath, 'utf8');\n\n    // Use gray-matter to parse the post metadata section\n    const matterResult = matter(fileContents);\n    if (matterResult?.data?.tags) {\n      matterResult.data.tags.forEach(\n        (tag) =\u003e tags.add(`/tags/${tag.replace(/\\s+/g, '-').toLowerCase()}`)\n      );\n    }\n  });\n\n  return Array.from(tags);\n}\n```\n\nNow we can call this within `pages/tags/[tag].js` under `getStaticPaths()`\n\n```js\nexport async function getStaticPaths() {\n  const paths = await getAllTags();\n  return {\n    paths,\n    fallback: false,\n  }\n}\n```\n\nNow, we can add another helper function `getPostDataByTag()` in `lib/tags.js` to fulfill `getStaticProps()`.  This is basically what we already do with `pages/posts/[id].js`, and it's not very efficient to do this twice, but all of this is happening at build time so it's not a huge deal for us.\n\nFor this, we will use [remark](https://github.com/remarkjs/remark) to process our markdown files.\n\n```js\nimport fs from 'fs';\nimport path from 'path';\nimport matter from 'gray-matter';\nimport { remark } from 'remark';\nimport html from 'remark-html';\n\nconst postsDirectory = path.join(process.cwd(), 'posts');\n\nexport async function getPostDataByTag(tag) {\n  const fileNames = fs.readdirSync(postsDirectory);\n  const posts = [];\n\n  fileNames.map(async (fileName) =\u003e {\n    const id = fileName.replace(/\\.md$/, '');\n  \n    // Read markdown file as string\n    const fullPath = path.join(postsDirectory, fileName);\n    const fileContents = fs.readFileSync(fullPath, 'utf8');\n\n    // Use gray-matter to parse the post metadata section\n    const matterResult = matter(fileContents);\n\n    if (matterResult?.data?.tags \u0026\u0026 matterResult.data.tags.includes(tag)) {\n      // Use remark to convert markdown into HTML string\n      const processedContent = await remark()\n        .use(html)\n        .process(matterResult.content);\n      const contentHtml = processedContent.toString();\n\n      // Combine the data with the id and contentHtml\n      posts.push({\n        id,\n        contentHtml,\n        markdown: matterResult.content,\n        ...matterResult.data,\n      });\n    }\n  });\n\n  return posts;\n}\n```\n\nWe can call this helper function in `pages/tags/[tag].js` under `getStaticProps()`\n\n```js\nexport async function getStaticProps({ params }) {\n  const { tag } = params;\n  const taggedPosts = await getPostDataByTag(tag);\n  return {\n    props: {\n      tag,\n      taggedPosts,\n    },\n  };\n}\n```\n\nNow, you can render the associated tag pages as you wish, but I did it with a few components I had set up:\n\n```jsx\nexport default function TagPage({ tag, taggedPosts }) {\n  const title = `Posts tagged \"${tag}\"`;\n  return (\n    \u003cLayout tagPage title={title} description={title}\u003e \n      \u003cheader\u003e\n        \u003cTag tag={tag} isHeader/\u003e\n      \u003c/header\u003e\n\n      \u003csection\u003e\n        \u003cPostList posts={taggedPosts} /\u003e\n      \u003c/section\u003e\n    \u003c/Layout\u003e\n  );\n}\n```\n\n### All tags\nThe last thing we want to add is a page containing all of the tags in a list, and all of the posts organized into categories.\n\nTo do this, we can add `pages/tags.js`, which can be reached at [/tags](/tags).\n\nOnce again, we want to implement `getStaticProps()` so we can pre-render this page at build time.  Luckily, we can reuse the two functions we wrote in `lib/tags.js` to make this easy.\n\n```js\nimport { getAllTags, getPostDataByTag } from '../lib/tags'\n\nexport async function getStaticProps() {\n  const tagsWithPosts = {};\n  const allTags = await getAllTags();\n\n  for (const tagPath of allTags) {\n    const tag = tagPath.replace('/tags/', '');\n    tagsWithPosts[tag] = await getPostDataByTag(tag);\n  }\n\n  return {\n    props: {\n      tagsWithPosts,\n    },\n  };\n}\n```\n\nNow, you can render this as you'd like using `tagsWithPosts` as a prop in your page component.  I also like having a toggle to show/hide the associated posts.\n\n```jsx\nexport default function TagPage({ tagsWithPosts }) {\n  const [showPosts, setShowPosts] = useState(false);\n\n  const tagAndPostList = Object.keys(tagsWithPosts).map((tag) =\u003e {\n    return (\n      \u003csection key={tag}\u003e\n        \u003cTag tag={tag} isHeader useLink label={tagsWithPosts[tag].length} /\u003e\n        {showPosts \u0026\u0026 \u003cPostList posts={tagsWithPosts[tag]} withPadding /\u003e }\n      \u003c/section\u003e\n    );\n  });\n\n  const title = 'All Tags';\n  return (\n    \u003cLayout title={title} description={title}\u003e\n      \u003cheader\u003e\n        \u003ch1\u003eAll tags\u003c/h1\u003e\n        \u003cdiv\u003e\n          \u003cCheckbox label={'Show posts'} value={showPosts} onChange={(x) =\u003e setShowPosts(!showPosts)} /\u003e\n        \u003c/div\u003e\n      \u003c/header\u003e\n\n      {tagAndPostList}\n\n    \u003c/Layout\u003e\n  );\n}\n```\n\nNow we have a page with all of our tags 🙌.\n\n---\n\n## Adding a custom domain\nNext on my todo list was adding a custom domain to transition from bschoeneweis.github.io ➡️ bradleyschoeneweis.com.  GitHub gives a good overview of the steps [here](https://docs.github.com/en/pages/configuring-a-custom-domain-for-your-github-pages-site/managing-a-custom-domain-for-your-github-pages-site#configuring-an-apex-domain), but we'll go through it below specifically using [Google domains](https://domains.google/).\n\nWe'll be using an apex domain (e.g. bradleyschoeneweis.com).\n\n### GitHub changes\n1. Go to the repository settings for your GitHub pages repository\n2. Click into the **Pages** section\n3. Type your apex domain into the **Custom domain** input and click **Save**\n\n### Google domains changes\n1. Go to your [Google domains registrar](https://domains.google.com/registrar/)\n2. Click **Manage** on the domain you'd like to use\n3. Navigate to the **DNS** settings and under **Resource records**, click **Manage custom records**\n4. Refer to the [GitHub documentation](https://docs.github.com/en/pages/configuring-a-custom-domain-for-your-github-pages-site/managing-a-custom-domain-for-your-github-pages-site#configuring-an-apex-domain) for the official IP address list, but add the following `A` and `CNAME` records\n\n![DNS records](/images/rebuilding-my-blog/dns-records.jpg)\n\n### Final steps and confirmation\n1. Head back to the **Pages** settings for your repository and check **Enforce HTTPS**\n2. After a bit of time has passed, run `dig www.mynewdomain.com +nostats +nocomments +nocmd` replace with your domain name and your output should look similar to the following:\n\n![dig output](/images/rebuilding-my-blog/dig-output.jpg)\n\nNow your custom domain should be all set up with your GitHub pages blog! 🎉\n\n---\n\n## Simple automated deployment\nFor the final touches, I didn't want to have to worry about building the blog locally each time, so we'll create a simple GitHub action to build and serve our blog on each commit.\n\n### The `package.json` scripts\nIf you don't have one already, you should create a `build` script in `package.json` as `build: \"next build\"`.\n\nI won't cover it here, but you'll also need to go through tutorials related to [exporting your Next.js project as static HTML](https://nextjs.org/docs/advanced-features/static-html-export).  There are a few gotchas here.  For example, you cannot use the Next.js image optimization or API routes.  You can see the full list of [unsupported features](https://nextjs.org/docs/advanced-features/static-html-export#unsupported-features).\n\nLong story short, within your `package.json` file, you should add an `export: \"next export\"` script.  This will create an `out/` directory with HTML files when this command is run.  You probably want to add this directory to your `.gitignore` file.\n\n### Deploy key\nWe will be using [peaceiris/actions-gh-pages@v3](https://github.com/peaceiris/actions-gh-pages) for making the deployment step easy.  As a part of this, we want to set up an SSH deploy key for safety.\n\nYou can use an SSH key that you already have setup, or create a new one with:\n\n```bash\nssh-keygen -t rsa -b 4096 -C \"$(git config user.email)\" -f gh-pages -N \"\"\n```\n\n1. Navigate back to your repository settings, and under security, go to **Deploy keys**\n2. Click **Add a deploy key** and enter `ACTIONS_DEPLOY_KEY` as the title\n3. Paste in your public RSA key (ends with `.pub`)\n4. Check **Allow write access** and then click **Add key**\n\n### `deploy.yml`\nNow that every thing is set up, we can put this all into a GitHub actions file.\n\nFrom the root of the project, create `.github/workflows/deploy.yml` and refer to the following:\n\n```yml\nname: Deploy to Github Pages\n\non:\n  push:\n    branches:\n      - develop\n\njobs:\n  deployment:\n    runs-on: ubuntu-latest\n\n    strategy:\n      matrix:\n        node-version: [14.x]\n\n    steps:\n      - uses: actions/checkout@v2\n\n      - name: Use Node.js ${{ matrix.node-version }}\n        uses: actions/setup-node@v2\n        with:\n          node-version: ${{ matrix.node-version }}\n\n      - name: Update NPM\n        run: npm i -g npm@latest\n\n      - name: Cache dependencies\n        uses: actions/cache@v2\n        with:\n          path: ~/.npm\n          key: ${{ runner.OS }}-node-${{ hashFiles('**/package-lock.json') }}\n          restore-keys: |\n            ${{ runner.OS }}-node-\n            ${{ runner.OS }}-\n\n      - name: Build\n        run: |\n          npm i --legacy-peer-deps\n          npm run build\n          npm run export\n\n      - name: Deploy\n        uses: peaceiris/actions-gh-pages@v3\n        with:\n          deploy_key: ${{ secrets.ACTIONS_DEPLOY_KEY }}\n          publish_dir: ./out\n          cname: yoururl.com\n```\n\nA few things to note:\n- The branch I actively work on is `develop`, so you'll want to update that to the branch you push to\n- If you didn't name your deploy key `ACTIONS_DEPLOY_KEY`, change the `deploy_key` value to `secrets.[Your key name]` in the **Deploy** step\n- The `cname` value in the **Deploy** step should be replaced with your newly configured custom domain\n\nNow, each time you commit and push up you blog changes, your blog should automatically be built and served under your custom domain.\n\nJust like that, your blog is just as functional as a cookiecutter template 🍪 and more easy to build upon than ever before.\n\n---\n","title":"Rebuilding my blog from scratch with Next.js","date":"2022-04-23","tags":["nextjs","react","javascript"],"description":"Rebuilding my blog from a Gatsby.js templated site to a custom Next.js site from scratch."}},"__N_SSG":true},"page":"/posts/[id]","query":{"id":"rebuilding-my-blog"},"buildId":"ZVKOKyQXrwDhq026SRufC","isFallback":false,"gsp":true,"scriptLoader":[]}</script></body></html>
