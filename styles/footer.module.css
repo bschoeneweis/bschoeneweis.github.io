@@ -12,6 +12,7 @@
     width: 90% !important;
     justify-content: center !important;
     margin-bottom: .1rem;
+    align-self: center;
   }
 
   .CopyrightWrapper {
