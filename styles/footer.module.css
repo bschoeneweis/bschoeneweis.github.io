@@ -11,7 +11,7 @@
   .SiteLinks {
     width: 90% !important;
     justify-content: center !important;
-    margin-bottom: .1rem;
+    margin-bottom: .25rem;
     align-self: center;
   }
 
@@ -27,7 +27,7 @@
   .LeftFooterWrapper {
     display: flex;
     justify-content: center;
-    margin-bottom: .1rem;
+    margin-bottom: .25rem;
   }
 
   .SocialLinkLogo {
@@ -38,7 +38,7 @@
     display: flex !important;
     justify-content: space-evenly;
     width: 100%;
-    margin-bottom: .1rem;
+    margin-bottom: .25rem;
   }
 }
 
