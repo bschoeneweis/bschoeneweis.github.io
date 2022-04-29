@@ -1,4 +1,5 @@
 import Head from 'next/head';
+
 import Layout, { siteTitle } from '../components/Layout';
 import PostList from '../components/PostList';
 import { getSortedPostsData } from '../lib/posts';
@@ -21,7 +22,7 @@ const Home = ({ allPostsData }) => {
       <Head>
         <title>{siteTitle}</title>
       </Head>
-      <section className={utilStyles.headingMd}>
+      <section className={`${utilStyles.headingMd} ${styles.BioSection}`}>
         <ul className={styles.BioList}>
           <li className={styles.BioListItem}>📍 &nbsp; Fort Worth, TX</li>
           <li className={styles.BioListItem}>

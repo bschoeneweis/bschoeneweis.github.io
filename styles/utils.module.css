@@ -68,6 +68,10 @@
   margin-bottom: 1.25rem;
 }
 
+.marginLeft0 {
+  margin-left: 0;
+}
+
 .marginLeft0_5rem {
   margin-left: 0.5rem;
 }
@@ -106,4 +110,14 @@
 
 .heightMaxContent {
   height: max-content;
+}
+
+.comingSoon {
+  font-size: 2rem;
+  line-height: 1.3;
+  font-weight: 800;
+  letter-spacing: -0.05rem;
+  margin-top: 10rem;
+  display: flex;
+  justify-content: center;
 }

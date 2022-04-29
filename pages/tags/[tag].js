@@ -36,7 +36,6 @@ const TagPage = ({ tag, taggedPosts }) => {
       <section className={`${utilStyles.headingMd} ${utilStyles.padding1rem} ${utilStyles.marginLeft0_5rem} `}>
         <PostList posts={taggedPosts} />
       </section>
-
     </Layout>
   );
 };
