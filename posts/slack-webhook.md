@@ -1,7 +1,7 @@
 ---
 title: 'Setting up a Slack webhook for simple notifications'
 date: '2021-07-11'
-tags: ['python', 'slack', 'webhook', 'api']
+tags: ['python', 'webhook', 'api']
 description: "Setting up a Slack webhook to send plain text or simple HTML notifications to a Slack channel."
 ---
 

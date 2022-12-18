@@ -26,7 +26,7 @@ const Home = ({ allPostsData }) => {
         <ul className={styles.BioList}>
           <li className={styles.BioListItem}>📍 &nbsp; Fort Worth, TX</li>
           <li className={styles.BioListItem}>
-            💻 &nbsp; Product Engineer @ <a href="https://radar.com" target="_blank" rel="noreferrer">Radar</a>
+            💻 &nbsp; Senior Product Engineer @ <a href="https://radar.com" target="_blank" rel="noreferrer">Radar</a>
           </li>
         </ul>
       </section>

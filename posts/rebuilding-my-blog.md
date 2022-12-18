@@ -1,7 +1,7 @@
 ---
 title: 'Rebuilding my blog from scratch with Next.js'
 date: '2022-04-23'
-tags: ['nextjs', 'react', 'javascript']
+tags: ['javascript', 'nextjs']
 description: 'Rebuilding my blog from a Gatsby.js templated site to a custom Next.js site from scratch.'
 ---
 

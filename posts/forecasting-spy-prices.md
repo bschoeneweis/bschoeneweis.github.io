@@ -1,8 +1,9 @@
 ---
 title: "Forecasting SPY prices using Facebook's Prophet"
 date: '2021-05-19'
-tags: ['python', 'pandas', 'data-analysis']
+tags: ['python', 'pandas']
 description: "Using Facebook’s Prophet, an open-source, time series forecasting procedure to predict SPY (SPDR S&P 500 ETF Trust) closing prices."
+hidden: true
 ---
 
 ## tl;dr

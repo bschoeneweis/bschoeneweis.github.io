@@ -1,7 +1,6 @@
 import Link from 'next/link';
 
 import styles from '../styles/footer.module.css';
-import utilStyles from '../styles/utils.module.css';
 
 const YEAR = new Date().getFullYear();
 
@@ -31,9 +30,6 @@ const Footer = () => {
         <div className={styles.SiteLinks}>
           <Link href="/books">
             <a>📚</a>
-          </Link>
-          <Link href="/tools">
-            <a>🛠</a>
           </Link>
         </div>
       </div>

@@ -7,7 +7,7 @@ import utilStyles from '../styles/utils.module.css';
 const PostList = ({ posts, withPadding }) => {
   return (
     <ul className={withPadding ? `${utilStyles.list} ${utilStyles.marginLeft1rem}` : utilStyles.list}>
-      {posts.map(({ id, date, title, tags }) => (
+      {posts.map(({ id, date, title, tags, hidden }) => ( !hidden &&
         <li className={utilStyles.listItem} key={id}>
           <Link href={`/posts/${id}`}>
             <a>{title}</a>
