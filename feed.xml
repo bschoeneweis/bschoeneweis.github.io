@@ -4,7 +4,7 @@
         <description><![CDATA[Bradley Schoeneweis]]></description>
         <link>https://bradleyschoeneweis.com</link>
         <generator>RSS for Node</generator>
-        <lastBuildDate>Sat, 18 Mar 2023 16:15:54 GMT</lastBuildDate>
+        <lastBuildDate>Sat, 18 Mar 2023 16:22:56 GMT</lastBuildDate>
         <atom:link href="https://bradleyschoeneweis.com/feed.xml" rel="self" type="application/rss+xml"/>
         <item>
             <title><![CDATA[Converting HTML to a PDF using Python, AWS Lambda, and wkhtmltopdf]]></title>
@@ -13,22 +13,6 @@
             <guid isPermaLink="true">/posts/converting-html-to-pdf</guid>
             <dc:creator><![CDATA[Bradley Schoeneweis]]></dc:creator>
             <pubDate>Thu, 29 Apr 2021 00:00:00 GMT</pubDate>
-        </item>
-        <item>
-            <title><![CDATA[Forecasting SPY prices using Facebook's Prophet]]></title>
-            <description><![CDATA[Using Facebook’s Prophet, an open-source, time series forecasting procedure to predict SPY (SPDR S&P 500 ETF Trust) closing prices.]]></description>
-            <link>/posts/forecasting-spy-prices</link>
-            <guid isPermaLink="true">/posts/forecasting-spy-prices</guid>
-            <dc:creator><![CDATA[Bradley Schoeneweis]]></dc:creator>
-            <pubDate>Wed, 19 May 2021 00:00:00 GMT</pubDate>
-        </item>
-        <item>
-            <title><![CDATA[Rebuilding my blog from scratch with Next.js]]></title>
-            <description><![CDATA[Rebuilding my blog from a Gatsby.js templated site to a custom Next.js site from scratch.]]></description>
-            <link>/posts/rebuilding-my-blog</link>
-            <guid isPermaLink="true">/posts/rebuilding-my-blog</guid>
-            <dc:creator><![CDATA[Bradley Schoeneweis]]></dc:creator>
-            <pubDate>Sat, 23 Apr 2022 00:00:00 GMT</pubDate>
         </item>
         <item>
             <title><![CDATA[Setting up a Slack webhook for simple notifications]]></title>
@@ -45,6 +29,14 @@
             <guid isPermaLink="true">/posts/visualizing-your-linkedin-connections</guid>
             <dc:creator><![CDATA[Bradley Schoeneweis]]></dc:creator>
             <pubDate>Thu, 08 Apr 2021 00:00:00 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[Rebuilding my blog from scratch with Next.js]]></title>
+            <description><![CDATA[Rebuilding my blog from a Gatsby.js templated site to a custom Next.js site from scratch.]]></description>
+            <link>/posts/rebuilding-my-blog</link>
+            <guid isPermaLink="true">/posts/rebuilding-my-blog</guid>
+            <dc:creator><![CDATA[Bradley Schoeneweis]]></dc:creator>
+            <pubDate>Sat, 23 Apr 2022 00:00:00 GMT</pubDate>
         </item>
     </channel>
 </rss>
