@@ -15,7 +15,8 @@ export const getStaticProps = async () => {
 
   for (const tagPath of allTags) {
     const tag = tagPath.replace('/tags/', '');
-    tagsWithPosts[tag] = await getPostDataByTag(tag);
+    const posts = await getPostDataByTag(tag);
+    tagsWithPosts[tag] = posts.filter((post) => !post.hidden);
   }
 
   return {
