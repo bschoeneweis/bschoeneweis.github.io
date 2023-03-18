@@ -22,15 +22,19 @@ const generate = async () => {
         path.join(__dirname, '..', 'posts', name),
       );
       const frontmatter = matter(content);
+      const { data } = frontmatter;
+      const { title, date, description, tags, hidden } = data || {};
 
-      feed.item({
-        title: frontmatter.data.title,
-        url: '/posts/' + name.replace(/\.mdx?/, ''),
-        date: frontmatter.data.date,
-        description: frontmatter.data.description,
-        tags: frontmatter.data.tags,
-        author: 'Bradley Schoeneweis',
-      });
+      if (!hidden) {
+        feed.item({
+          title,
+          url: '/posts/' + name.replace(/\.mdx?/, ''),
+          date,
+          description,
+          tags,
+          author: 'Bradley Schoeneweis',
+        });
+      }
     })
   )
 
