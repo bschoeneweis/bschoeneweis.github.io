@@ -4,7 +4,7 @@
         <description><![CDATA[Bradley Schoeneweis]]></description>
         <link>https://bradleyschoeneweis.com</link>
         <generator>RSS for Node</generator>
-        <lastBuildDate>Sat, 18 Mar 2023 16:22:56 GMT</lastBuildDate>
+        <lastBuildDate>Sat, 17 Jun 2023 15:15:40 GMT</lastBuildDate>
         <atom:link href="https://bradleyschoeneweis.com/feed.xml" rel="self" type="application/rss+xml"/>
         <item>
             <title><![CDATA[Converting HTML to a PDF using Python, AWS Lambda, and wkhtmltopdf]]></title>
@@ -23,20 +23,20 @@
             <pubDate>Sun, 11 Jul 2021 00:00:00 GMT</pubDate>
         </item>
         <item>
-            <title><![CDATA[Visualizing your LinkedIn connections using Python]]></title>
-            <description><![CDATA[Using Python's Pandas, NetworkX, and pyvis to understand and visualize companies within a directly connected LinkedIn network.]]></description>
-            <link>/posts/visualizing-your-linkedin-connections</link>
-            <guid isPermaLink="true">/posts/visualizing-your-linkedin-connections</guid>
-            <dc:creator><![CDATA[Bradley Schoeneweis]]></dc:creator>
-            <pubDate>Thu, 08 Apr 2021 00:00:00 GMT</pubDate>
-        </item>
-        <item>
             <title><![CDATA[Rebuilding my blog from scratch with Next.js]]></title>
             <description><![CDATA[Rebuilding my blog from a Gatsby.js templated site to a custom Next.js site from scratch.]]></description>
             <link>/posts/rebuilding-my-blog</link>
             <guid isPermaLink="true">/posts/rebuilding-my-blog</guid>
             <dc:creator><![CDATA[Bradley Schoeneweis]]></dc:creator>
             <pubDate>Sat, 23 Apr 2022 00:00:00 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[Visualizing your LinkedIn connections using Python]]></title>
+            <description><![CDATA[Using Python's Pandas, NetworkX, and pyvis to understand and visualize companies within a directly connected LinkedIn network.]]></description>
+            <link>/posts/visualizing-your-linkedin-connections</link>
+            <guid isPermaLink="true">/posts/visualizing-your-linkedin-connections</guid>
+            <dc:creator><![CDATA[Bradley Schoeneweis]]></dc:creator>
+            <pubDate>Thu, 08 Apr 2021 00:00:00 GMT</pubDate>
         </item>
     </channel>
 </rss>
