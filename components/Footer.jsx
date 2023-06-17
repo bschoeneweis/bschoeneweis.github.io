@@ -15,12 +15,6 @@ const Footer = () => {
           <a href="https://github.com/bschoeneweis" target="_blank" rel="noreferrer">
             <img width="16" src="/icons/github.svg" alt="github logo" className={styles.SocialLinkLogo}></img>
           </a>
-          <a href="https://medium.com/@bradley-schoeneweis" target="_blank" rel="noreferrer">
-            <img width="16" src="/icons/medium.svg" alt="medium logo" className={styles.SocialLinkLogo}></img>
-          </a>
-          <a href="https://dev.to/bschoeneweis" target="_blank" rel="noreferrer">
-            <img width="16" src="/icons/dev.svg" alt="dev logo" className={styles.SocialLinkLogo}></img>
-          </a>
           <a href="/feed.xml">
             <img width="16" src="/icons/rss.svg" alt="rss logo" className={styles.SocialLinkLogo}></img>
           </a>
